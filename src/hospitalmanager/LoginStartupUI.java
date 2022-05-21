@@ -107,11 +107,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
         Username.setForeground(new java.awt.Color(51, 51, 51));
         Username.setText("Username");
         Username.setBorder(null);
-        Username.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                UsernameFocusGained(evt);
-            }
-        });
         Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameActionPerformed(evt);
@@ -150,10 +145,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         
     }//GEN-LAST:event_PasswordActionPerformed
-
-    private void UsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusGained
-        Username.setText("");
-    }//GEN-LAST:event_UsernameFocusGained
 
     private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
         Password.setText("");
