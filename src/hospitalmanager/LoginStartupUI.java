@@ -64,11 +64,11 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 210, 15));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 210, 15));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/icons8_user_32px_2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_user_32px_2.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 30, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/icons8_lock_20px.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_lock_20px.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 20, 30));
 
