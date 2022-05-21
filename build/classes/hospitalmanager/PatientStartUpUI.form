@@ -30,27 +30,16 @@
       </Events>
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Edit"/>
-          </Properties>
-        </Menu>
-      </SubComponents>
     </Menu>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -90,7 +79,6 @@
                                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                               <Component id="jScrollPane4" min="-2" pref="476" max="-2" attributes="0"/>
                                               <Group type="102" attributes="0">
-                                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                                   <Component id="jButton1" min="-2" pref="148" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                                                   <Component id="jButton2" min="-2" pref="170" max="-2" attributes="0"/>
@@ -126,7 +114,7 @@
                   <Component id="jLabel2" max="32767" attributes="0"/>
                   <Component id="jLabel5" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
               <Component id="jLabel6" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -156,7 +144,7 @@
                       <Component id="jButton3" min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="68" max="32767" attributes="0"/>
+              <EmptySpace pref="79" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
