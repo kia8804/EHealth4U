@@ -3,7 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hospitalmanager;
-
+import java.awt.HeadlessException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author guest123
@@ -13,7 +22,8 @@ public class LoginStartupUI extends javax.swing.JFrame {
     /**
      * Creates new form LoginStartupUI
      */
-
+    private static Scanner x;
+    
     public LoginStartupUI() {
         initComponents();
     }
@@ -172,7 +182,41 @@ public class LoginStartupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameFocusGained
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        String username = Username.getText();
+        String password = Password.getText();
+        boolean found = false;
+        
+        try
+        {
+            File filex = new File("C:\\Users\\mirka\\OneDrive\\Pictures\\Documents\\ICS4U\\EHealthCare\\src\\hospitalmanager\\UserDatabase.csv");
+            Scanner scan = new Scanner(filex);
+            scan.useDelimiter("[,\n]");
+            
+            while(scan.hasNext())
+            {
+                String usernamex = scan.next();
+                String passwordx = scan.next();
+                
+                if(usernamex.equals(username) && passwordx.equals(password))
+                {
+                    found = true;
+                }
+            }
+            if(found && username.contains("@guest.com"))
+            {
+                JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
+                PatientStartUpUI guestPage = new PatientStartUpUI();
+                guestPage.show();
+                
+                dispose();
+            }
+            
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "An error occured! "+e);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
