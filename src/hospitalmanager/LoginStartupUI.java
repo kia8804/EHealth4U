@@ -216,7 +216,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@front.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
-                NurseDoctorStartup nextPage = new NurseDoctorStartup();
+                FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
                 nextPage.show();
                 
                 dispose();
