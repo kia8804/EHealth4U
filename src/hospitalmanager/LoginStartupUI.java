@@ -207,7 +207,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@doctor.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
-                NurseDoctorStartup nextPage = new NurseDoctorStartup();
+                DoctorStartUpUI nextPage = new DoctorStartUpUI();
                 nextPage.show();
                 
                 dispose();
