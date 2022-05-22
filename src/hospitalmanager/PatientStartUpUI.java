@@ -4,6 +4,8 @@
  */
 package hospitalmanager;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author khuon
@@ -12,7 +14,6 @@ public class PatientStartUpUI extends javax.swing.JFrame {
 
     public PatientStartUpUI() {
         initComponents();
-        //this.setExtendedState(PatientStartUpUI.MAXIMIZED_BOTH);
     }
 
     /**
@@ -181,7 +182,7 @@ public class PatientStartUpUI extends javax.swing.JFrame {
                                                         .addComponent(jLabel4)
                                                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 3, Short.MAX_VALUE))))))
+                                                .addGap(0, 0, Short.MAX_VALUE))))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(116, 116, 116)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,7 +202,7 @@ public class PatientStartUpUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +226,7 @@ public class PatientStartUpUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
