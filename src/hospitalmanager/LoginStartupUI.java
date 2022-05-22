@@ -3,15 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hospitalmanager;
-import java.awt.HeadlessException;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -205,7 +198,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@guest.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
-                PatientStartUpUI nextPage = new PatientStartUpUI();
+                PatientStartupUI nextPage = new PatientStartupUI();
                 nextPage.show();
                 
                 dispose();
