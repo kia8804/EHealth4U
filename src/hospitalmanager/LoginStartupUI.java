@@ -188,7 +188,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
         
         try
         {
-            File filex = new File("C:\\Users\\mirka\\OneDrive\\Pictures\\Documents\\ICS4U\\EHealthCare\\src\\hospitalmanager\\UserDatabase.csv");
+            File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[,\n]");
             
@@ -209,6 +209,12 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 guestPage.show();
                 
                 dispose();
+            }
+            if(!found)
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+                Username.setText("Username");
+                Password.setText("Password");
             }
             
         }
