@@ -192,12 +192,12 @@ public class LoginStartupUI extends javax.swing.JFrame {
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[,\n]");
             
-            while(scan.hasNext())
+            while(scan.hasNext() && !found)
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
                 
-                if(usernamex.equals(username) && passwordx.equals(password))
+                if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
                     found = true;
                 }
@@ -205,11 +205,30 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@guest.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
-                PatientStartUpUI guestPage = new PatientStartUpUI();
-                guestPage.show();
+                PatientStartUpUI nextPage = new PatientStartUpUI();
+                nextPage.show();
                 
                 dispose();
             }
+            
+            if(found && username.contains("@doctor.com"))
+            {
+                JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                NurseDoctorStartup nextPage = new NurseDoctorStartup();
+                nextPage.show();
+                
+                dispose();
+            }
+            
+            if(found && username.contains("@front.com"))
+            {
+                JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
+                NurseDoctorStartup nextPage = new NurseDoctorStartup();
+                nextPage.show();
+                
+                dispose();
+            }
+            
             if(!found)
             {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
