@@ -19,6 +19,8 @@ public class LoginStartupUI extends javax.swing.JFrame {
     
     public LoginStartupUI() {
         initComponents();
+        Username.setBackground(new java.awt.Color(0,0,0,0));
+        Password.setBackground(new java.awt.Color(0,0,0,0));
     }
 
     /**
@@ -33,6 +35,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Password = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -44,6 +47,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -51,13 +55,15 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/5259_aurora.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(101, 170, 190));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Password.setBackground(new java.awt.Color(101, 170, 190));
+        Password.setBackground(new java.awt.Color(204, 204, 204));
         Password.setForeground(new java.awt.Color(51, 51, 51));
         Password.setText("Password");
         Password.setBorder(null);
@@ -71,19 +77,22 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 PasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 211, 30));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 210, 15));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 210, 15));
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 211, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_user_32px_2.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 30, 40));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 210, 15));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_lock_20px.png"))); // NOI18N
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 210, 15));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_contacts_20px.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_lock_20px_1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 20, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 20, 30));
 
-        Username.setBackground(new java.awt.Color(101, 170, 190));
+        Username.setBackground(new java.awt.Color(255, 255, 255));
         Username.setForeground(new java.awt.Color(51, 51, 51));
         Username.setText("Username");
         Username.setBorder(null);
@@ -97,14 +106,14 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 UsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 210, 20));
-        Username.getAccessibleContext().setAccessibleName("");
+        jPanel1.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 210, 30));
+        Username.getAccessibleContext().setAccessibleName(" ");
         Username.getAccessibleContext().setAccessibleDescription("");
 
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("              Insert Company Logo/Image Here");
         jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 280, 150));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 280, 150));
 
         jButton2.setBackground(new java.awt.Color(101, 170, 190));
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
@@ -114,7 +123,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 130, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 130, 40));
 
         jButton3.setBackground(new java.awt.Color(101, 170, 190));
         jButton3.setForeground(new java.awt.Color(51, 51, 51));
@@ -124,7 +133,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 100, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 100, 40));
 
         jButton4.setBackground(new java.awt.Color(101, 170, 190));
         jButton4.setForeground(new java.awt.Color(51, 51, 51));
@@ -134,62 +143,47 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 100, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 100, 40));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/5259_aurora.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
-        
-    }//GEN-LAST:event_UsernameActionPerformed
-
-    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
-        
-    }//GEN-LAST:event_PasswordActionPerformed
-
-    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
-        Password.setText("");
-        if(Username.getText().isEmpty())Username.setText("Username");
-    }//GEN-LAST:event_PasswordFocusGained
-
-    private void UsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusGained
-        String username = Username.getText();
-        if(username.equals("Username"))Username.setText("");
-        String password = Password.getText();
-        if(password.length()==0)Password.setText("password");
-
-    }//GEN-LAST:event_UsernameFocusGained
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String username = Username.getText();
         String password = Password.getText();
         boolean found = false;
-        
+
         try
         {
             File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[,\n]");
-            
+
             while(scan.hasNext() && !found)
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
-                
+
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
                     found = true;
@@ -200,37 +194,37 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
                 PatientStartupUI nextPage = new PatientStartupUI();
                 nextPage.show();
-                
+
                 dispose();
             }
-            
+
             if(found && username.contains("@doctor.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
                 DoctorStartUpUI nextPage = new DoctorStartUpUI();
                 nextPage.show();
-                
+
                 dispose();
             }
-            
+
             if(found && username.contains("@front.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
                 FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
                 nextPage.show();
-                
+
                 dispose();
             }
-            
+
             if(!found)
             {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
                 Username.setText("Username");
                 Password.setText("Password");
             }
-            
+
         }
-        
+
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, "An error occured! "+e);
@@ -241,9 +235,25 @@ public class LoginStartupUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+
+    }//GEN-LAST:event_UsernameActionPerformed
+
+    private void UsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusGained
+        String username = Username.getText();
+        if(username.equals("Username"))Username.setText("");
+        String password = Password.getText();
+        if(password.length()==0)Password.setText("password");
+    }//GEN-LAST:event_UsernameFocusGained
+
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
+
+    }//GEN-LAST:event_PasswordActionPerformed
+
+    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
+        Password.setText("");
+        if(Username.getText().isEmpty())Username.setText("Username");
+    }//GEN-LAST:event_PasswordFocusGained
 
     /**
      * @param args the command line arguments
@@ -289,6 +299,8 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
