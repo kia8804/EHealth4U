@@ -63,7 +63,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Password.setBackground(new java.awt.Color(204, 204, 204));
+        Password.setBackground(new java.awt.Color(255, 255, 255));
         Password.setForeground(new java.awt.Color(51, 51, 51));
         Password.setText("Password");
         Password.setBorder(null);
