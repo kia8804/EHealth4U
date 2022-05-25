@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hospitalmanager;
+import hospitalmanager.Patient.PatientStartupUI;
+import hospitalmanager.FrontDesk.FrontDeskStartUpUI;
+import hospitalmanager.Doctor.DoctorStartUpUI;
 import java.io.File;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
