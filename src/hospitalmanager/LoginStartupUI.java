@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hospitalmanager;
+import hospitalmanager.Patient.PatientStartupUI;
+import hospitalmanager.FrontDesk.FrontDeskStartUpUI;
+import hospitalmanager.Doctor.DoctorStartUpUI;
 import java.io.File;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -96,6 +99,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
         Username.setForeground(new java.awt.Color(51, 51, 51));
         Username.setText("Username");
         Username.setBorder(null);
+        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         Username.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 UsernameFocusGained(evt);
