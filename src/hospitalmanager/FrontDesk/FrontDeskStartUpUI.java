@@ -35,7 +35,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        AddDoctor = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -111,10 +111,10 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(51, 51, 51));
 
-        jButton2.setText("Add doctor");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AddDoctor.setText("Add doctor");
+        AddDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AddDoctorActionPerformed(evt);
             }
         });
 
@@ -150,7 +150,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -159,7 +159,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -329,9 +329,10 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void AddDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDoctorActionPerformed
+        FrontDeskAddDoctorUI nextPage = new FrontDeskAddDoctorUI();
+        nextPage.show();
+    }//GEN-LAST:event_AddDoctorActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -342,7 +343,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void AddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPatientActionPerformed
-        FrontDeskAddPatientUIRemaster nextPage = new FrontDeskAddPatientUIRemaster();
+        FrontDeskAddPatientUI nextPage = new FrontDeskAddPatientUI();
         nextPage.show();
     }//GEN-LAST:event_AddPatientActionPerformed
 
@@ -396,9 +397,9 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddDoctor;
     private javax.swing.JButton AddPatient;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
