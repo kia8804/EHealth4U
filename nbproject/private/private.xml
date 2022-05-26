@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mirka/OneDrive/Pictures/Documents/ICS4U/EHealthCare/src/hospitalmanager/Doctor/DoctorStartUpUI.java</file>
-            <file>file:/C:/Users/mirka/OneDrive/Pictures/Documents/ICS4U/EHealthCare/src/hospitalmanager/FrontDesk/FrontDeskStartUpUI.java</file>
-            <file>file:/C:/Users/mirka/OneDrive/Pictures/Documents/ICS4U/EHealthCare/src/hospitalmanager/UserDatabase.csv</file>
-            <file>file:/C:/Users/mirka/OneDrive/Pictures/Documents/ICS4U/EHealthCare/src/hospitalmanager/SignUp.java</file>
-            <file>file:/C:/Users/mirka/OneDrive/Pictures/Documents/ICS4U/EHealthCare/src/hospitalmanager/Patient/PatientStartupUI.java</file>
-            <file>file:/C:/Users/mirka/OneDrive/Pictures/Documents/ICS4U/EHealthCare/src/hospitalmanager/LoginStartupUI.java</file>
+            <file>file://JFRCVIFS.Student.UGDSB.ED/Home/Students/DiKar9960/Documents/NetBeansProjects/EHealthCare/src/hospitalmanager/UserDatabase.csv</file>
+            <file>file://JFRCVIFS.Student.UGDSB.ED/Home/Students/DiKar9960/Documents/NetBeansProjects/EHealthCare/src/hospitalmanager/Doctor/DoctorNoteUI.java</file>
+            <file>file://JFRCVIFS.Student.UGDSB.ED/Home/Students/DiKar9960/Documents/NetBeansProjects/EHealthCare/src/hospitalmanager/LoginStartupUI.java</file>
+            <file>file://JFRCVIFS.Student.UGDSB.ED/Home/Students/DiKar9960/Documents/NetBeansProjects/EHealthCare/src/hospitalmanager/Doctor/DoctorPatientList.java</file>
         </group>
     </open-files>
 </project-private>
