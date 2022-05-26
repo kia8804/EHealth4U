@@ -35,12 +35,12 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         AddDoctor = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        DoctorSearch = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         AddPatient = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        PatientSearch = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -124,12 +124,12 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(19, 19, 21));
-        jButton3.setForeground(new java.awt.Color(204, 204, 204));
-        jButton3.setText("Doctor search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        DoctorSearch.setBackground(new java.awt.Color(19, 19, 21));
+        DoctorSearch.setForeground(new java.awt.Color(204, 204, 204));
+        DoctorSearch.setText("Doctor search");
+        DoctorSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                DoctorSearchActionPerformed(evt);
             }
         });
 
@@ -159,7 +159,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DoctorSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AddDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -171,7 +171,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AddDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DoctorSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
@@ -188,12 +188,12 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(19, 19, 21));
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
-        jButton1.setText("Patient search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        PatientSearch.setBackground(new java.awt.Color(19, 19, 21));
+        PatientSearch.setForeground(new java.awt.Color(204, 204, 204));
+        PatientSearch.setText("Patient search");
+        PatientSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                PatientSearchActionPerformed(evt);
             }
         });
 
@@ -224,7 +224,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AddPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PatientSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -236,7 +236,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(AddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PatientSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 24, Short.MAX_VALUE))
@@ -368,9 +368,10 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         nextPage.show();
     }//GEN-LAST:event_AddDoctorActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void DoctorSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorSearchActionPerformed
+        FrontDeskSearchDoctorUI nextpage = new FrontDeskSearchDoctorUI();
+        nextpage.show();
+    }//GEN-LAST:event_DoctorSearchActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -381,9 +382,10 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         nextPage.show();
     }//GEN-LAST:event_AddPatientActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void PatientSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientSearchActionPerformed
+        FrontDeskSearchPatientUI nextpage = new FrontDeskSearchPatientUI();
+        nextpage.show();
+    }//GEN-LAST:event_PatientSearchActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         AddAppointmentUI nextPage = new AddAppointmentUI();
@@ -440,9 +442,9 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddDoctor;
     private javax.swing.JButton AddPatient;
+    private javax.swing.JButton DoctorSearch;
     private javax.swing.JButton LogOut;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton PatientSearch;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
