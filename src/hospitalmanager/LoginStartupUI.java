@@ -142,6 +142,11 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(101, 170, 190));
         jButton4.setForeground(new java.awt.Color(51, 51, 51));
         jButton4.setText("Sign Up");
+        jButton4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jButton4FocusGained(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -169,7 +174,10 @@ public class LoginStartupUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        SignUp register = new SignUp();
+        register.show();
+        
+        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -187,6 +195,8 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
+                //scan.next();
+                for(int i = 0; i < 7; i++)scan.next();
 
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
@@ -258,6 +268,10 @@ public class LoginStartupUI extends javax.swing.JFrame {
         Password.setText("");
         if(Username.getText().isEmpty())Username.setText("Username");
     }//GEN-LAST:event_PasswordFocusGained
+
+    private void jButton4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton4FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4FocusGained
 
     /**
      * @param args the command line arguments
