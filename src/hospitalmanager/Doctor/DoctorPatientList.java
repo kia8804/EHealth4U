@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hospitalmanager.Doctor;
-
 /**
  *
  * @author dikar9960
@@ -27,29 +26,29 @@ public class DoctorPatientList extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        patientList = new javax.swing.JTable();
         Close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        patientList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null,  new Boolean(true), null}
+                {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Birth", "Sex", ""
+                "Gmail", "First Name", "Last Name", "Number", "Title 5"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(patientList);
 
         Close.setText("Close");
         Close.addActionListener(new java.awt.event.ActionListener() {
@@ -119,11 +118,12 @@ public class DoctorPatientList extends javax.swing.JFrame {
                 new DoctorPatientList().setVisible(true);
             }
         });
+        /*Dynamically adds patients to list*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Close;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable patientList;
     // End of variables declaration//GEN-END:variables
 }
