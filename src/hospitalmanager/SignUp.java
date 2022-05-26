@@ -329,6 +329,8 @@ public class SignUp extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         String username = LastN.getText() + FirstN.getText() + "@patient.com";
+        int password = ((int) (Math.random()*(100000 - 9999))) + 9999;
+
         
         try
         {
@@ -336,7 +338,7 @@ public class SignUp extends javax.swing.JFrame {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             
-            pw.println(username+','+FirstN.getText()+','+LastN.getText()+','+PhoneN.getText()+','+
+            pw.println(username+','+password+','+FirstN.getText()+','+LastN.getText()+','+PhoneN.getText()+','+
                        EmailA.getText()+','+DateOB.getText()+','+HomeA.getText()+','+Gender.getText());
             pw.flush();
             pw.close();
