@@ -1,4 +1,4 @@
-Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender
-user1@guest.com,1234,na,na,na,na,na,na,na
-user2@doctor.com,1234,na,na,na,na,na,na,na
-user3@front.com,1234,na,na,na,na,na,na,na
+Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender,SecurityQ1,SecurityQ2,SecurityQ3
+user1@guest.com,1234,na,na,na,na,na,na,na,food,name,sport
+user2@doctor.com,1234,na,na,na,na,na,na,na,food,name,sport
+user3@front.com,1234,na,na,na,na,na,na,na,food,name,sport
