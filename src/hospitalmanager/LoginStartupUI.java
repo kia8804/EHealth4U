@@ -6,7 +6,9 @@ package hospitalmanager;
 import hospitalmanager.Patient.PatientStartupUI;
 import hospitalmanager.FrontDesk.FrontDeskStartUpUI;
 import hospitalmanager.Doctor.DoctorStartUpUI;
+import java.awt.List;
 import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 /**
@@ -195,8 +197,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
-                //scan.next();
-                for(int i = 0; i < 7; i++)scan.next();
+                for(int i = 0; i < 10; i++)scan.next();
 
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
@@ -246,7 +247,66 @@ public class LoginStartupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        String s = (String)JOptionPane.showInputDialog(this, "Username","Account Verification", JOptionPane.PLAIN_MESSAGE);
+        int rNum = ((int) (Math.random()*(3 - 0)));
+        String[] questions = new String[] {"What is your favorite food?","What is your mother's maiden name?","What is your favorite sport?"};
+        String q = questions[rNum];
+        String ans;
+        
+        boolean valid = true;
+        boolean found = false;
+
+        try
+        {
+            File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
+            Scanner scan = new Scanner(filex);
+            scan.useDelimiter("[,\n]");
+
+            while(scan.hasNext() && !found)
+            {
+                String usernamex = scan.next();
+
+                if(usernamex.trim().equals(s.trim()))
+                {
+                    found = true;
+                }
+                else
+                {
+                    for(int i = 0; i < 11; i++)scan.next();
+                }
+            }
+            
+            if(found)
+            {
+                valid = false;
+                String secQ = (String)JOptionPane.showInputDialog(this, q,"Account Verification", JOptionPane.PLAIN_MESSAGE);
+                for(int i = 0; i < 8+rNum; i++)scan.next();
+                ans = scan.next();
+                if(secQ.trim().equals(ans.trim()))valid = true;
+            }
+
+            if(!found)
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Username");
+            }
+            
+            if(!valid)
+            {
+                JOptionPane.showMessageDialog(null, "Inccorect");
+            }  
+            
+            if(valid)
+            {
+                String newPass = (String)JOptionPane.showInputDialog(this, "Please Enter new password","Password Reset", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Password has been reset");
+            }
+
+        }
+
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "An error occured! "+e);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
