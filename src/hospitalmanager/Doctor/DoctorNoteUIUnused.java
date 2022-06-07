@@ -8,12 +8,12 @@ package hospitalmanager.Doctor;
  *
  * @author dikar9960
  */
-public class DoctorNoteUI extends javax.swing.JFrame {
+public class DoctorNoteUIUnused extends javax.swing.JFrame {
 
     /**
      * Creates new form DoctorNoteUI
      */
-    public DoctorNoteUI() {
+    public DoctorNoteUIUnused() {
         initComponents();
     }
 
@@ -132,20 +132,21 @@ public class DoctorNoteUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DoctorNoteUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DoctorNoteUIUnused.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DoctorNoteUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DoctorNoteUIUnused.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DoctorNoteUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DoctorNoteUIUnused.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DoctorNoteUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DoctorNoteUIUnused.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DoctorNoteUI().setVisible(true);
+                new DoctorNoteUIUnused().setVisible(true);
             }
         });
     }
