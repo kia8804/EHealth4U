@@ -7,8 +7,11 @@ import hospitalmanager.Patient.PatientStartupUI;
 import hospitalmanager.FrontDesk.FrontDeskStartUpUI;
 import hospitalmanager.Doctor.DoctorStartUpUI;
 import java.awt.List;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 /**
@@ -269,6 +272,24 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 if(usernamex.trim().equals(s.trim()))
                 {
                     found = true;
+                    String filepath = "src\\hospitalmanager\\temp.csv";
+
+                    try
+                    {
+                        FileWriter fw = new FileWriter(filepath, true);
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        PrintWriter pw = new PrintWriter(bw);
+
+                        pw.print(usernamex+',');
+                        for(int i = 0; i < 10; i++) pw.print(scan.next()+',');
+                        pw.print(scan.next());
+                        pw.flush();
+                        pw.close();
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
                 }
                 else
                 {
@@ -298,6 +319,37 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(valid)
             {
                 String newPass = (String)JOptionPane.showInputDialog(this, "Please Enter new password","Password Reset", JOptionPane.PLAIN_MESSAGE);
+                
+                String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+                //String username = LastN.getText() + FirstN.getText() + "@patient.com";
+                //int password = ((int) (Math.random()*(100000 - 9999))) + 9999;
+                File filet = new File("src\\hospitalmanager\\temp.csv");
+                Scanner scant = new Scanner(filet);
+                scant.useDelimiter("[,\n]");
+
+                try
+                {
+                    FileWriter fw = new FileWriter(filepath, true);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    PrintWriter pw = new PrintWriter(bw);
+
+                    pw.print(scant.next()+',');
+                    pw.print(newPass+',');
+                    scant.next();
+                    for(int i = 0; i < 9; i++) pw.print(scant.next()+',');
+                    pw.print(scant.next());
+                            
+                    pw.flush();
+                    pw.close();
+
+                    JOptionPane.showMessageDialog(null, "record saved");
+
+                }
+                catch(Exception e)
+                {
+
+                }
+                
                 JOptionPane.showMessageDialog(null, "Password has been reset");
             }
 

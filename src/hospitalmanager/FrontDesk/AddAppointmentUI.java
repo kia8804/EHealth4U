@@ -4,6 +4,11 @@
  */
 package hospitalmanager.FrontDesk;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author khuon
@@ -269,7 +274,26 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_DateFocusGained
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        
+        try
+        {
+            FileWriter fw = new FileWriter(filepath, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
+                       Doctor.getSelectedItem());
+            pw.flush();
+            pw.close();
+            
+            JOptionPane.showMessageDialog(null, "record saved");
+            
+        }
+        catch(Exception e)
+        {
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void DoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DoctorFocusGained
