@@ -52,6 +52,11 @@ public class DoctorPatientList extends javax.swing.JFrame {
         });
 
         Select.setText("Select Patient");
+        Select.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SelectActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +103,11 @@ public class DoctorPatientList extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String s = (String)JOptionPane.showInputDialog(this, "Username","Account Verification", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void SelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectActionPerformed
+        DoctorPatientView page = new DoctorPatientView();
+        page.show();
+    }//GEN-LAST:event_SelectActionPerformed
 
     /**
      * @param args the command line arguments

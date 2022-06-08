@@ -5,6 +5,7 @@
 package hospitalmanager.Doctor;
 
 import hospitalmanager.LoginStartupUI;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,8 +57,11 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jPopupMenu1.add(jMenuItem1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 53, 55));
         setUndecorated(true);
         setResizable(false);
+
+        jPanel3.setBackground(new java.awt.Color(51, 53, 55));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -281,7 +285,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(29, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -305,7 +309,11 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       String s = (String)JOptionPane.showInputDialog(this, "Enter First Name then Last Name Ex.\"Joe Mama\"","Search Patient", JOptionPane.PLAIN_MESSAGE);
+       if(s.substring(s.length()-10,s.length()).equals("@guest.com"))
+       {
+           System.out.println("lmao");
+       }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
