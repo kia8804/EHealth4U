@@ -7,6 +7,7 @@ import hospitalmanager.Patient.PatientStartupUI;
 import hospitalmanager.FrontDesk.FrontDeskStartUpUI;
 import hospitalmanager.Doctor.DoctorStartUpUI;
 import java.awt.List;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
@@ -258,7 +259,9 @@ public class LoginStartupUI extends javax.swing.JFrame {
         
         boolean valid = true;
         boolean found = false;
-
+        
+        File newFile = new File("src\\hospitalmanager\\tem.csv");
+        
         try
         {
             File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
@@ -275,16 +278,22 @@ public class LoginStartupUI extends javax.swing.JFrame {
                     String filepath = "src\\hospitalmanager\\temp.csv";
 
                     try
-                    {
-                        FileWriter fw = new FileWriter(filepath, true);
-                        BufferedWriter bw = new BufferedWriter(fw);
-                        PrintWriter pw = new PrintWriter(bw);
+                    {         
+                        FileWriter fw1 = new FileWriter("src\\hospitalmanager\\tem.csv", true);
+                        //FileWriter fw1 = new FileWriter(filepath, true);
+                        BufferedWriter bw1 = new BufferedWriter(fw1);
+                        PrintWriter pw1 = new PrintWriter(bw1);
 
-                        pw.print(usernamex+',');
-                        for(int i = 0; i < 10; i++) pw.print(scan.next()+',');
-                        pw.print(scan.next());
-                        pw.flush();
-                        pw.close();
+                        pw1.print(usernamex+',');
+                        for(int i = 0; i < 10; i++) 
+                        {
+                            pw1.print(scan.next()+',');
+                        }
+                        pw1.print(scan.next());
+                        pw1.flush();
+                        pw1.close();
+                        
+                        //removeRecord("src\\hospitalmanager\\UserDatabase.csv", usernamex, 1);
                     }
                     catch(Exception e)
                     {
@@ -300,9 +309,13 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found)
             {
                 valid = false;
+                File filet = new File("src\\hospitalmanager\\tem.csv");
+                //File filet = new File("src\\hospitalmanager\\temp.csv");
+                Scanner scant = new Scanner(filet);
+                scant.useDelimiter("[,\n]");
                 String secQ = (String)JOptionPane.showInputDialog(this, q,"Account Verification", JOptionPane.PLAIN_MESSAGE);
-                for(int i = 0; i < 8+rNum; i++)scan.next();
-                ans = scan.next();
+                for(int i = 0; i <= 8+rNum; i++)scant.next();
+                ans = scant.next();
                 if(secQ.trim().equals(ans.trim()))valid = true;
             }
 
@@ -321,9 +334,8 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 String newPass = (String)JOptionPane.showInputDialog(this, "Please Enter new password","Password Reset", JOptionPane.PLAIN_MESSAGE);
                 
                 String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-                //String username = LastN.getText() + FirstN.getText() + "@patient.com";
-                //int password = ((int) (Math.random()*(100000 - 9999))) + 9999;
-                File filet = new File("src\\hospitalmanager\\temp.csv");
+
+                File filet = new File("src\\hospitalmanager\\tem.csv");
                 Scanner scant = new Scanner(filet);
                 scant.useDelimiter("[,\n]");
 
@@ -341,7 +353,8 @@ public class LoginStartupUI extends javax.swing.JFrame {
                             
                     pw.flush();
                     pw.close();
-
+                    
+                    
                     JOptionPane.showMessageDialog(null, "record saved");
 
                 }
@@ -349,7 +362,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 {
 
                 }
-                
+                //newFile.
                 JOptionPane.showMessageDialog(null, "Password has been reset");
             }
 
@@ -418,6 +431,48 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 new LoginStartupUI().setVisible(true);
             }
         });
+    }
+    public static void removeRecord(String filepath, String removeUser, int positionOfTerm)
+    {
+        int position = positionOfTerm - 1;
+        String tempFile = "temp. txt";
+        File oldFile = new File(filepath);
+        File newFile = new File(tempFile);
+        
+        String currentLine;
+        String data[];
+        
+        try
+        {
+            FileWriter fw = new FileWriter(tempFile,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            FileReader fr = new FileReader(filepath);
+            BufferedReader br = new BufferedReader(fr);
+            
+            while ((currentLine = br.readLine ()) != null)
+            {
+                data = currentLine.split (",");
+                if (!(data[position].equalsIgnoreCase(removeUser))) pw.println(currentLine);
+            }
+            
+            pw.flush(); 
+            pw.close(); 
+            fr.close(); 
+            br.close(); 
+            bw.close(); 
+            fw.close();
+
+            oldFile.delete();
+            File dump = new File(filepath);
+            newFile.renameTo(dump);
+        }
+        catch(Exception e)
+        {
+                
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
