@@ -5,6 +5,8 @@
 package hospitalmanager.Doctor;
 
 import hospitalmanager.LoginStartupUI;
+import java.io.File;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -132,7 +134,6 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
 
-        comingPatient.setForeground(new java.awt.Color(255, 255, 255));
         comingPatient.setText("Name");
 
         comingDate.setText("Date");
@@ -314,10 +315,10 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                         .addComponent(jButton4)
                         .addGap(15, 15, 15))))
         );
@@ -338,11 +339,37 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String s = (String)JOptionPane.showInputDialog(this, "Enter First Name then Last Name Ex.\"Joe Mama\"","Search Patient", JOptionPane.PLAIN_MESSAGE);
-       if(s.substring(s.length()-10,s.length()).equals("@guest.com"))
-       {
-           System.out.println("lmao");
-       }
+       String lastName = (String)JOptionPane.showInputDialog(this, "Enter Last Name Ex.\"Joe Mama\"","Search Patient", JOptionPane.PLAIN_MESSAGE);
+       boolean found = false;
+
+        try
+        {
+            File filex = new File("src\\hospitalmanager.Doctor\\PatientNotes.csv");
+            Scanner scan = new Scanner(filex);
+            scan.useDelimiter("[,\n]");
+
+            while(scan.hasNext() && !found)
+            {
+                String firstN = scan.next();
+                String lastN = scan.next();
+                for(int i = 0; i < 3; i++)scan.next();
+
+                if(lastN.trim().equals(lastName.trim()))
+
+                {
+                    found = true;
+                    String note = scan.next();
+                    JOptionPane.showMessageDialog(null, note);
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            
+        }
+        if(!found) JOptionPane.showMessageDialog(null, "Patient does not exist");
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
