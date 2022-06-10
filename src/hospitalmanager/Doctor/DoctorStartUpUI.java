@@ -132,6 +132,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
 
+        comingPatient.setForeground(new java.awt.Color(255, 255, 255));
         comingPatient.setText("Name");
 
         comingDate.setText("Date");
