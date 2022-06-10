@@ -34,12 +34,12 @@ public class DoctorPatientView extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        EmailDNC = new javax.swing.JLabel();
+        NameDNC = new javax.swing.JLabel();
+        BirthdayDNC = new javax.swing.JLabel();
+        SexDNC = new javax.swing.JLabel();
+        PhoneNumberDNC = new javax.swing.JLabel();
+        AdressDNC = new javax.swing.JLabel();
         patientName = new javax.swing.JLabel();
         patientBirthday = new javax.swing.JLabel();
         patientSex = new javax.swing.JLabel();
@@ -47,13 +47,11 @@ public class DoctorPatientView extends javax.swing.JFrame {
         patientEmail = new javax.swing.JLabel();
         patientAddress = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        Text_1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         infoChange = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,6 +76,7 @@ public class DoctorPatientView extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Patient Info");
 
         jLabel2.setText("Add Diagnosis/Note");
@@ -90,23 +89,23 @@ public class DoctorPatientView extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(36, 38, 39));
 
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Email");
+        EmailDNC.setBackground(new java.awt.Color(255, 255, 255));
+        EmailDNC.setText("Email");
 
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Name");
+        NameDNC.setBackground(new java.awt.Color(255, 255, 255));
+        NameDNC.setText("Name");
 
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Birthday");
+        BirthdayDNC.setBackground(new java.awt.Color(255, 255, 255));
+        BirthdayDNC.setText("Birthday");
 
-        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Sex");
+        SexDNC.setBackground(new java.awt.Color(255, 255, 255));
+        SexDNC.setText("Sex");
 
-        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Phone Number");
+        PhoneNumberDNC.setBackground(new java.awt.Color(255, 255, 255));
+        PhoneNumberDNC.setText("Phone Number");
 
-        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Address");
+        AdressDNC.setBackground(new java.awt.Color(255, 255, 255));
+        AdressDNC.setText("Address");
 
         patientName.setBackground(new java.awt.Color(255, 255, 255));
         patientName.setText("patientName");
@@ -134,27 +133,27 @@ public class DoctorPatientView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
+                        .addComponent(NameDNC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(patientName))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel20)
+                        .addComponent(AdressDNC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(patientAddress))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
+                        .addComponent(BirthdayDNC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(patientBirthday))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
+                        .addComponent(SexDNC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(patientSex))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel19)
+                        .addComponent(PhoneNumberDNC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(patientPhonenumber))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
+                        .addComponent(EmailDNC)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(patientEmail)))
                 .addContainerGap())
@@ -164,34 +163,34 @@ public class DoctorPatientView extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
+                    .addComponent(NameDNC)
                     .addComponent(patientName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
+                    .addComponent(BirthdayDNC)
                     .addComponent(patientBirthday))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
+                    .addComponent(SexDNC)
                     .addComponent(patientSex))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
+                    .addComponent(PhoneNumberDNC)
                     .addComponent(patientPhonenumber))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
+                    .addComponent(EmailDNC)
                     .addComponent(patientEmail))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
+                    .addComponent(AdressDNC)
                     .addComponent(patientAddress))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(36, 38, 39));
 
-        jLabel3.setText("Current Notes/Diagnosis");
+        Text_1.setText("Current Notes/Diagnosis");
 
         jScrollPane2.setViewportView(jTextPane1);
 
@@ -204,7 +203,7 @@ public class DoctorPatientView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(Text_1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -212,7 +211,7 @@ public class DoctorPatientView extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel3)
+                .addComponent(Text_1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
                 .addContainerGap())
@@ -220,13 +219,12 @@ public class DoctorPatientView extends javax.swing.JFrame {
 
         infoChange.setText("Change Info");
 
-        jMenu2.setText("File");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Edit");
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
+        jButton1.setText("Test");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,7 +239,11 @@ public class DoctorPatientView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(42, 42, 42)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
@@ -263,8 +265,13 @@ public class DoctorPatientView extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(67, 67, 67)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -277,7 +284,7 @@ public class DoctorPatientView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Close)
                             .addComponent(infoChange))
-                        .addContainerGap(11, Short.MAX_VALUE))
+                        .addContainerGap(33, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -290,6 +297,10 @@ public class DoctorPatientView extends javax.swing.JFrame {
     private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
         dispose();
     }//GEN-LAST:event_CloseActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        patientName.setText("test");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,98 +338,31 @@ public class DoctorPatientView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AdressDNC;
+    private javax.swing.JLabel BirthdayDNC;
     private javax.swing.JButton Close;
+    private javax.swing.JLabel EmailDNC;
+    private javax.swing.JLabel NameDNC;
+    private javax.swing.JLabel PhoneNumberDNC;
+    private javax.swing.JLabel SexDNC;
+    private javax.swing.JLabel Text_1;
     private javax.swing.JButton infoChange;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel patientAddress;
-    private javax.swing.JLabel patientAddress1;
-    private javax.swing.JLabel patientAddress2;
-    private javax.swing.JLabel patientAddress3;
-    private javax.swing.JLabel patientAddress4;
-    private javax.swing.JLabel patientAddress5;
     private javax.swing.JLabel patientBirthday;
-    private javax.swing.JLabel patientBirthday1;
-    private javax.swing.JLabel patientBirthday2;
-    private javax.swing.JLabel patientBirthday3;
-    private javax.swing.JLabel patientBirthday4;
-    private javax.swing.JLabel patientBirthday5;
     private javax.swing.JLabel patientEmail;
-    private javax.swing.JLabel patientEmail1;
-    private javax.swing.JLabel patientEmail2;
-    private javax.swing.JLabel patientEmail3;
-    private javax.swing.JLabel patientEmail4;
-    private javax.swing.JLabel patientEmail5;
     private javax.swing.JLabel patientName;
-    private javax.swing.JLabel patientName1;
-    private javax.swing.JLabel patientName2;
-    private javax.swing.JLabel patientName3;
-    private javax.swing.JLabel patientName4;
-    private javax.swing.JLabel patientName5;
     private javax.swing.JLabel patientPhonenumber;
-    private javax.swing.JLabel patientPhonenumber1;
-    private javax.swing.JLabel patientPhonenumber2;
-    private javax.swing.JLabel patientPhonenumber3;
-    private javax.swing.JLabel patientPhonenumber4;
-    private javax.swing.JLabel patientPhonenumber5;
     private javax.swing.JLabel patientSex;
-    private javax.swing.JLabel patientSex1;
-    private javax.swing.JLabel patientSex2;
-    private javax.swing.JLabel patientSex3;
-    private javax.swing.JLabel patientSex4;
-    private javax.swing.JLabel patientSex5;
     // End of variables declaration//GEN-END:variables
 }
