@@ -4,6 +4,8 @@
  */
 package hospitalmanager.FrontDesk;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author khuon
@@ -31,7 +33,7 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
+        AddPatient = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -77,13 +79,13 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
             .addGap(0, 145, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(37, 37, 39));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Add patient");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AddPatient.setBackground(new java.awt.Color(37, 37, 39));
+        AddPatient.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        AddPatient.setForeground(new java.awt.Color(255, 255, 255));
+        AddPatient.setText("Add patient");
+        AddPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AddPatientActionPerformed(evt);
             }
         });
 
@@ -209,6 +211,11 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
                 GenderFocusGained(evt);
             }
         });
+        Gender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -224,7 +231,7 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
                     .addComponent(DOB, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                     .addComponent(FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AddPatient, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Gender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,7 +290,7 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
                         .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
+                            .addComponent(AddPatient)
                             .addComponent(jButton2))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -303,9 +310,58 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void AddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPatientActionPerformed
+        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        
+        if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
+            LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
+            DOB.getText().equals("MM/DD/YYYY") || DOB.getText().equals("") || 
+            PhoneNumber.getText().equals("First Name") || PhoneNumber.getText().equals("") || 
+            Email.getText().equals("Last Name") || Email.getText().equals("") || 
+            HomeAddress.getText().equals("MM/DD/YYYY") || HomeAddress.getText().equals("") ||
+            Gender.getSelectedItem().equals("Select"))
+        {
+            if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
+                LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
+                DOB.getText().equals("MM/DD/YYYY") || DOB.getText().equals("") || 
+                PhoneNumber.getText().equals("First Name") || PhoneNumber.getText().equals("") || 
+                Email.getText().equals("Last Name") || Email.getText().equals("") || 
+                HomeAddress.getText().equals("MM/DD/YYYY") || HomeAddress.getText().equals("")) &&
+                Gender.getSelectedItem().equals("Select"))
+            {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields and select your gender");
+            }
+            else if  (Gender.getSelectedItem().equals("Select"))
+            {
+                JOptionPane.showMessageDialog(null, "Please select your gender");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            }
+        }
+        else
+        {
+            /*try
+            {
+                FileWriter fw = new FileWriter(filepath, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter pw = new PrintWriter(bw);
+
+                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
+                           Doctor.getSelectedItem());
+                pw.flush();
+                pw.close();
+
+                JOptionPane.showMessageDialog(null, "record saved");
+
+            }
+            catch(Exception e)
+            {
+
+            }*/
+        }
+    }//GEN-LAST:event_AddPatientActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
@@ -378,6 +434,10 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
         if(HomeAddress.getText().length()==0)HomeAddress.setText("Home Address");
     }//GEN-LAST:event_EmailFocusGained
 
+    private void GenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GenderActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -421,6 +481,7 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddPatient;
     private javax.swing.JTextField DOB;
     private javax.swing.JTextField Email;
     private javax.swing.JTextField FirstName;
@@ -428,7 +489,6 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
     private javax.swing.JTextField HomeAddress;
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField PhoneNumber;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;

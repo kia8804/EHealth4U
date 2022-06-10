@@ -40,7 +40,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         Date = new javax.swing.JTextField();
         Doctor = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Save = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -129,12 +129,12 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(25, 25, 25));
-        jButton2.setForeground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Save");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Save.setBackground(new java.awt.Color(25, 25, 25));
+        Save.setForeground(new java.awt.Color(204, 204, 204));
+        Save.setText("Save");
+        Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SaveActionPerformed(evt);
             }
         });
 
@@ -183,7 +183,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButton2)
+                            .addComponent(Save)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1))
                         .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -214,7 +214,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                 .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(Save)
                     .addComponent(jButton1))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -273,28 +273,51 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         if(lastName.length()==0)LastName.setText("Last Name");
     }//GEN-LAST:event_DateFocusGained
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         
-        try
+        if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
+            LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
+            Date.getText().equals("MM/DD/YYYY") || Date.getText().equals("") || Doctor.getSelectedItem().equals("Select"))
         {
-            FileWriter fw = new FileWriter(filepath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            
-            pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
-                       Doctor.getSelectedItem());
-            pw.flush();
-            pw.close();
-            
-            JOptionPane.showMessageDialog(null, "record saved");
-            
+            if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
+                 LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
+                 Date.getText().equals("MM/DD/YYYY") || Date.getText().equals("")) && Doctor.getSelectedItem().equals("Select"))
+            {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields and select a doctor");
+            }
+            else if  (Doctor.getSelectedItem().equals("Select"))
+            {
+                JOptionPane.showMessageDialog(null, "Please select a doctor");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            }
         }
-        catch(Exception e)
+        else
         {
-            
+            /*try
+            {
+                FileWriter fw = new FileWriter(filepath, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter pw = new PrintWriter(bw);
+
+                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
+                           Doctor.getSelectedItem());
+                pw.flush();
+                pw.close();
+
+                JOptionPane.showMessageDialog(null, "record saved");
+
+            }
+            catch(Exception e)
+            {
+
+            }*/
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_SaveActionPerformed
 
     private void DoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DoctorFocusGained
         String firstName = FirstName.getText();
@@ -352,8 +375,8 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Doctor;
     private javax.swing.JTextField FirstName;
     private javax.swing.JTextField LastName;
+    private javax.swing.JButton Save;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
