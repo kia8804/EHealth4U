@@ -190,7 +190,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
-                for(int i = 0; i < 7; i++)scan.next();
+                for(int i = 0; i < 8; i++)scan.next();
 
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {

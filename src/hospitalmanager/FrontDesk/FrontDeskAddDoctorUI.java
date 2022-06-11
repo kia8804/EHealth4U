@@ -321,8 +321,6 @@ public class FrontDeskAddDoctorUI extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Please fill all the fields");
         }
-        
-        
 
         else
         {

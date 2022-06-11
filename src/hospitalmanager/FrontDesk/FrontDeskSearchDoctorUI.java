@@ -4,6 +4,10 @@
  */
 package hospitalmanager.FrontDesk;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author khuon
@@ -84,7 +88,7 @@ public class FrontDeskSearchDoctorUI extends javax.swing.JFrame {
 
         SearchBy.setBackground(new java.awt.Color(36, 38, 39));
         SearchBy.setForeground(new java.awt.Color(204, 204, 204));
-        SearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "First Name", "Last Name", "Phone Number", "Email", " " }));
+        SearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Phone Number", "Email" }));
         SearchBy.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 SearchByFocusGained(evt);
@@ -99,6 +103,11 @@ public class FrontDeskSearchDoctorUI extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(37, 37, 39));
         jButton1.setForeground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         Cancel.setBackground(new java.awt.Color(37, 37, 39));
         Cancel.setForeground(new java.awt.Color(204, 204, 204));
@@ -178,6 +187,44 @@ public class FrontDeskSearchDoctorUI extends javax.swing.JFrame {
     private void SearchByFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchByFocusGained
         if(Search.getText().length()==0)Search.setText("Search");
     }//GEN-LAST:event_SearchByFocusGained
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        String line = "";
+        
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+            
+            
+            while((line = br.readLine()) != null)
+            {
+                String[] user = line.split(",");
+                if(SearchBy.getSelectedItem().equals("Phone Number"))
+                {
+                    String Phone = Search.getText();
+                    if(user[4].equals(Phone))
+                    {
+                        JOptionPane.showMessageDialog(null, user[0]+"\n"+user[1]);
+                        break;
+                    }
+                }
+                if(SearchBy.getSelectedItem().equals("Email"))
+                {
+                    String Email = Search.getText();
+                    if(user[5].equals(Email))
+                    {
+                        JOptionPane.showMessageDialog(null, user[0]+"\n"+user[1]);
+                        break;
+                    }
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
