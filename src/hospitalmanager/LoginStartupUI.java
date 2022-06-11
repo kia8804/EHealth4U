@@ -212,6 +212,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
                 name = username;
                 DoctorStartUpUI nextPage = new DoctorStartUpUI();
+                nextPage.DrStartup.setText(name);
                 nextPage.show();
 
                 dispose();
