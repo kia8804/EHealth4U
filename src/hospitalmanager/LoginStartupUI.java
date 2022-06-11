@@ -25,7 +25,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
      * Creates new form LoginStartupUI
      */
     private static Scanner x;
-    public static String name;
     
     public LoginStartupUI() {
         initComponents();
@@ -191,17 +190,27 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
-                for(int i = 0; i < 8; i++)scan.next();
-
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
                     found = true;
                 }
+                else
+                {
+                    for(int i = 0; i < 9; i++)scan.next();
+                }
             }
+            
             if(found && username.contains("@guest.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
                 PatientStartupUI nextPage = new PatientStartupUI();
+                nextPage.FName.setText(scan.next().trim());
+                nextPage.LName.setText(scan.next().trim());
+                nextPage.PhoneN.setText(scan.next().trim());
+                nextPage.Email.setText(scan.next().trim());
+                nextPage.DateOB.setText(scan.next().trim());
+                nextPage.HomeAddress.setText(scan.next().trim());
+                nextPage.Sex.setText(scan.next().trim());
                 nextPage.show();
 
                 dispose();
@@ -210,7 +219,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@doctor.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
-                name = username;
+                String name = username;
                 DoctorStartUpUI nextPage = new DoctorStartUpUI();
                 nextPage.DrStartup.setText(name);
                 nextPage.show();

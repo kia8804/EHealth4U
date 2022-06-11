@@ -5,7 +5,9 @@
 package hospitalmanager.Doctor;
 
 import hospitalmanager.LoginStartupUI;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -336,23 +338,34 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String lastName = (String)JOptionPane.showInputDialog(this, "Enter Last Name Ex.\"Joe Mama\"","Search Patient", JOptionPane.PLAIN_MESSAGE);
-       boolean found = false;
-       String[][] patients = {{"Jim","Tim","fine"},
-                              {"John","Tom","sick"},
-                              {"Kim","Lin","healthy"}};
-        for(int i = 0; i < patients.length && !found; i++)
+       String email = (String)JOptionPane.showInputDialog(this, "Enter Patient Email Address", JOptionPane.PLAIN_MESSAGE);
+        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        String line = "";
+        boolean found = false;
+        
+        try
         {
-            if(patients[i][1].equals(lastName)) 
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+            
+            
+            while((line = br.readLine()) != null && !found)
             {
-                found = true;
-                JOptionPane.showMessageDialog(null, patients[i][2]);
+                String[] user = line.split(",");
+                if(user[0].contains("@guest.com") && user[5].equals(email))
+                {
+                    JOptionPane.showMessageDialog(null, user[10]);
+                    found = true;
+                }
+            }
+            if(!found)
+            {
+                JOptionPane.showMessageDialog(null, "Patient Does Not Exist");
             }
         }
-        
-        if(!found) JOptionPane.showMessageDialog(null, "Patient does not exist");
-
-
+        catch(Exception e)
+        {
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
