@@ -25,6 +25,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
      * Creates new form LoginStartupUI
      */
     private static Scanner x;
+    public static String name;
     
     public LoginStartupUI() {
         initComponents();
@@ -209,6 +210,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@doctor.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                name = username;
                 DoctorStartUpUI nextPage = new DoctorStartUpUI();
                 nextPage.show();
 
