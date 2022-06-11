@@ -200,6 +200,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         PatientSearch.setBackground(new java.awt.Color(19, 19, 21));
         PatientSearch.setForeground(new java.awt.Color(204, 204, 204));
         PatientSearch.setText("Patient search");
+        PatientSearch.setToolTipText("");
         PatientSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PatientSearchActionPerformed(evt);
@@ -384,7 +385,8 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
     }//GEN-LAST:event_DoctorSearchActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        
+        SeePatientUI nextPage = new SeePatientUI();
+        nextPage.show();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void AddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPatientActionPerformed

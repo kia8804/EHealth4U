@@ -88,7 +88,7 @@ public class FrontDeskSearchPatientUI extends javax.swing.JFrame {
 
         SearchBy.setBackground(new java.awt.Color(36, 38, 39));
         SearchBy.setForeground(new java.awt.Color(204, 204, 204));
-        SearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Phone Number", "Email", " " }));
+        SearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Phone Number", "Email" }));
         SearchBy.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 SearchByFocusGained(evt);
