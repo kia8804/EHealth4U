@@ -191,33 +191,38 @@ public class FrontDeskSearchDoctorUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         String line = "";
+        boolean found = false;
         
         try
         {
             BufferedReader br = new BufferedReader(new FileReader(filepath));
             
             
-            while((line = br.readLine()) != null)
+            while((line = br.readLine()) != null && !found)
             {
                 String[] user = line.split(",");
                 if(SearchBy.getSelectedItem().equals("Phone Number"))
                 {
                     String Phone = Search.getText();
-                    if(user[4].equals(Phone))
+                    if(user[4].equals(Phone) && user[0].contains("@doctor.com"))
                     {
                         JOptionPane.showMessageDialog(null, user[0]+"\n"+user[1]);
-                        break;
+                        found = true;
                     }
                 }
                 if(SearchBy.getSelectedItem().equals("Email"))
                 {
                     String Email = Search.getText();
-                    if(user[5].equals(Email))
+                    if(user[5].equals(Email) && user[0].contains("@doctor.com"))
                     {
                         JOptionPane.showMessageDialog(null, user[0]+"\n"+user[1]);
-                        break;
+                        found = true;
                     }
                 }
+            }
+            if(!found)
+            {
+                JOptionPane.showMessageDialog(null, "Doctor Not Found");
             }
         }
         catch(Exception e)

@@ -369,7 +369,8 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
+        SeeDoctorUI nextPage = new SeeDoctorUI();
+        nextPage.show();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void AddDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDoctorActionPerformed
@@ -383,7 +384,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
     }//GEN-LAST:event_DoctorSearchActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void AddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPatientActionPerformed

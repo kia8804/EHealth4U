@@ -4,6 +4,9 @@
  */
 package hospitalmanager.FrontDesk;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 
 /**
@@ -312,7 +315,7 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
 
     private void AddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPatientActionPerformed
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-        
+                
         if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
             LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
             DOB.getText().equals("MM/DD/YYYY") || DOB.getText().equals("") || 
@@ -321,35 +324,19 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
             HomeAddress.getText().equals("MM/DD/YYYY") || HomeAddress.getText().equals("") ||
             Gender.getSelectedItem().equals("Select"))
         {
-            if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
-                LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
-                DOB.getText().equals("MM/DD/YYYY") || DOB.getText().equals("") || 
-                PhoneNumber.getText().equals("First Name") || PhoneNumber.getText().equals("") || 
-                Email.getText().equals("Last Name") || Email.getText().equals("") || 
-                HomeAddress.getText().equals("MM/DD/YYYY") || HomeAddress.getText().equals("")) &&
-                Gender.getSelectedItem().equals("Select"))
-            {
-                JOptionPane.showMessageDialog(null, "Please fill all the fields and select your gender");
-            }
-            else if  (Gender.getSelectedItem().equals("Select"))
-            {
-                JOptionPane.showMessageDialog(null, "Please select your gender");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Please fill all the fields");
-            }
+            JOptionPane.showMessageDialog(null, "Please fill all the fields");
         }
+
         else
         {
-            /*try
+            try
             {
                 FileWriter fw = new FileWriter(filepath, true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
 
-                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
-                           Doctor.getSelectedItem());
+                pw.println((LastName.getText()+"@patient.com,")+"1234,"+FirstName.getText()+','+LastName.getText()+','+PhoneNumber.getText()+','+
+                           PhoneNumber.getText()+','+Email.getText()+','+DOB.getText()+','+HomeAddress.getText()+','+Gender.getSelectedItem()+"na");
                 pw.flush();
                 pw.close();
 
@@ -359,7 +346,7 @@ public class FrontDeskAddPatientUI extends javax.swing.JFrame {
             catch(Exception e)
             {
 
-            }*/
+            }
         }
     }//GEN-LAST:event_AddPatientActionPerformed
 

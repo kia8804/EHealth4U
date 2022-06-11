@@ -6,19 +6,18 @@ package hospitalmanager.FrontDesk;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author guest123
  */
-public class SeeDoctorUI extends javax.swing.JFrame {
+public class SeePatientUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form SeeDoctorUI
+     * Creates new form SeePatientUI
      */
-    public SeeDoctorUI() {
+    public SeePatientUI() {
         initComponents();
         
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
@@ -28,16 +27,15 @@ public class SeeDoctorUI extends javax.swing.JFrame {
         {
             BufferedReader br = new BufferedReader(new FileReader(filepath));
 
-
             br.readLine();
             while((line = br.readLine()) != null)
             {
                 String[] user = line.split(",");
                 DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-                if(user[0].contains("@doctor.com"))
+                if(user[0].contains("@guest.com"))
                 {
-                    String[] doctorInfo = {user[4],user[5]};
-                    tblModel.addRow(doctorInfo);
+                    user = new String[]{user[2],user[3],user[4],user[5],user[6],user[7],user[8]};
+                    tblModel.addRow(user);
                 }
             }
         }
@@ -67,14 +65,14 @@ public class SeeDoctorUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Phone Number", "Email Address"
+                "First Name", "Last Name", "Email Address", "Date of Birth", "Home Address", "Gender"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -90,17 +88,21 @@ public class SeeDoctorUI extends javax.swing.JFrame {
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
         );
 
         pack();
@@ -124,21 +126,20 @@ public class SeeDoctorUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SeeDoctorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SeePatientUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SeeDoctorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SeePatientUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SeeDoctorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SeePatientUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SeeDoctorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SeePatientUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SeeDoctorUI().setVisible(true);
-
+                new SeePatientUI().setVisible(true);
             }
         });
     }

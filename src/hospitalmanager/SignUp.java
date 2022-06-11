@@ -339,7 +339,7 @@ public class SignUp extends javax.swing.JFrame {
             PrintWriter pw = new PrintWriter(bw);
             
             pw.println(username+','+password+','+FirstN.getText()+','+LastN.getText()+','+PhoneN.getText()+','+
-                       EmailA.getText()+','+DateOB.getText()+','+HomeA.getText()+','+Gender.getText());
+                       EmailA.getText()+','+DateOB.getText()+','+HomeA.getText()+','+Gender.getText()+"na");
             pw.flush();
             pw.close();
             
