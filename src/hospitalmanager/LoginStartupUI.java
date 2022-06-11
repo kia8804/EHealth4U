@@ -53,7 +53,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Username = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -125,16 +124,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
         jLabel6.setOpaque(true);
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 280, 150));
 
-        jButton2.setBackground(new java.awt.Color(101, 170, 190));
-        jButton2.setForeground(new java.awt.Color(51, 51, 51));
-        jButton2.setText("Forget Password?");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 130, 40));
-
         jButton3.setBackground(new java.awt.Color(101, 170, 190));
         jButton3.setForeground(new java.awt.Color(51, 51, 51));
         jButton3.setText("Log In");
@@ -201,7 +190,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
-                for(int i = 0; i < 10; i++)scan.next();
+                for(int i = 0; i < 7; i++)scan.next();
 
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
@@ -249,130 +238,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "An error occured! "+e);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String s = (String)JOptionPane.showInputDialog(this, "Username","Account Verification", JOptionPane.PLAIN_MESSAGE);
-        int rNum = ((int) (Math.random()*(3 - 0)));
-        String[] questions = new String[] {"What is your favorite food?","What is your mother's maiden name?","What is your favorite sport?"};
-        String q = questions[rNum];
-        String ans;
-        
-        boolean valid = true;
-        boolean found = false;
-        
-        File newFile = new File("src\\hospitalmanager\\tem.csv");
-        
-        try
-        {
-            File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
-            Scanner scan = new Scanner(filex);
-            scan.useDelimiter("[,\n]");
-
-            while(scan.hasNext() && !found)
-            {
-                String usernamex = scan.next();
-
-                if(usernamex.trim().equals(s.trim()))
-                {
-                    found = true;
-                    String filepath = "src\\hospitalmanager\\temp.csv";
-
-                    try
-                    {         
-                        FileWriter fw1 = new FileWriter("src\\hospitalmanager\\tem.csv", true);
-                        //FileWriter fw1 = new FileWriter(filepath, true);
-                        BufferedWriter bw1 = new BufferedWriter(fw1);
-                        PrintWriter pw1 = new PrintWriter(bw1);
-
-                        pw1.print(usernamex+',');
-                        for(int i = 0; i < 10; i++) 
-                        {
-                            pw1.print(scan.next()+',');
-                        }
-                        pw1.print(scan.next());
-                        pw1.flush();
-                        pw1.close();
-                        
-                        //removeRecord("src\\hospitalmanager\\UserDatabase.csv", usernamex, 1);
-                    }
-                    catch(Exception e)
-                    {
-
-                    }
-                }
-                else
-                {
-                    for(int i = 0; i < 11; i++)scan.next();
-                }
-            }
-            
-            if(found)
-            {
-                valid = false;
-                File filet = new File("src\\hospitalmanager\\tem.csv");
-                //File filet = new File("src\\hospitalmanager\\temp.csv");
-                Scanner scant = new Scanner(filet);
-                scant.useDelimiter("[,\n]");
-                String secQ = (String)JOptionPane.showInputDialog(this, q,"Account Verification", JOptionPane.PLAIN_MESSAGE);
-                for(int i = 0; i <= 8+rNum; i++)scant.next();
-                ans = scant.next();
-                if(secQ.trim().equals(ans.trim()))valid = true;
-            }
-
-            if(!found)
-            {
-                JOptionPane.showMessageDialog(null, "Incorrect Username");
-            }
-            
-            if(!valid)
-            {
-                JOptionPane.showMessageDialog(null, "Inccorect");
-            }  
-            
-            if(valid)
-            {
-                String newPass = (String)JOptionPane.showInputDialog(this, "Please Enter new password","Password Reset", JOptionPane.PLAIN_MESSAGE);
-                
-                String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-
-                File filet = new File("src\\hospitalmanager\\tem.csv");
-                Scanner scant = new Scanner(filet);
-                scant.useDelimiter("[,\n]");
-
-                try
-                {
-                    FileWriter fw = new FileWriter(filepath, true);
-                    BufferedWriter bw = new BufferedWriter(fw);
-                    PrintWriter pw = new PrintWriter(bw);
-
-                    pw.print(scant.next()+',');
-                    pw.print(newPass+',');
-                    scant.next();
-                    for(int i = 0; i < 9; i++) pw.print(scant.next()+',');
-                    pw.print(scant.next());
-                            
-                    pw.flush();
-                    pw.close();
-                    
-                    
-                    JOptionPane.showMessageDialog(null, "record saved");
-
-                }
-                catch(Exception e)
-                {
-
-                }
-                //newFile.
-                JOptionPane.showMessageDialog(null, "Password has been reset");
-            }
-
-        }
-
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "An error occured! "+e);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
 
@@ -479,7 +344,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField Username;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
