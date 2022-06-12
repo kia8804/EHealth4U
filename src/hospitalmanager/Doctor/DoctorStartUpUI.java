@@ -56,6 +56,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         DrStartup = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -225,6 +226,14 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_user_32px_2.png"))); // NOI18N
         jLabel7.setText("Patient");
 
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton3.setText("Patient visit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -234,7 +243,8 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -245,6 +255,8 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -380,6 +392,47 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         dispose();        
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String patientEmail = JOptionPane.showInputDialog("Please enter the patient email");
+                String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+                String line = "";
+                boolean found = false;
+
+                try
+                {
+                    BufferedReader br = new BufferedReader(new FileReader(filepath));
+
+
+                    while((line = br.readLine()) != null && !found)
+                    {
+                        String[] user = line.split(",");
+                        if(user[0].contains("@guest.com"))
+                        {
+                            String Email = patientEmail;
+                            if(user[5].equals(Email))
+                            {
+                                DoctorPatientVisit stat = new DoctorPatientVisit();
+                                stat.Name.setText(user[2] + " " + user[3]);
+                                stat.Gender.setText(user[8]);
+                                stat.PhoneNumber.setText(user[4]);
+                                stat.Email.setText(user[5]);
+                                stat.DOB.setText(user[6]);
+                                stat.show();
+                                found = true;
+                            }
+                        }
+                    }
+                    if(!found)
+                    {
+                        JOptionPane.showMessageDialog(null, "Patient Not Found");
+                    }
+                }
+                catch(Exception e)
+                {
+
+                }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -423,6 +476,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     private javax.swing.JLabel comingRoom;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

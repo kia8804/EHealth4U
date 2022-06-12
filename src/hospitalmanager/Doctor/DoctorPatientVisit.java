@@ -57,9 +57,12 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
+        jPanel2.setBackground(new java.awt.Color(51, 53, 55));
+
         jPanel3.setBackground(new java.awt.Color(45, 45, 45));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Patient visit");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -81,8 +84,11 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(36, 38, 39));
 
+        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Diagnosis");
 
+        jTextArea1.setBackground(new java.awt.Color(58, 61, 63));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -93,9 +99,12 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +112,8 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -126,14 +136,19 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Phone Number");
 
+        Name.setForeground(new java.awt.Color(204, 204, 204));
         Name.setText("Name");
 
+        Gender.setForeground(new java.awt.Color(204, 204, 204));
         Gender.setText("Gender");
 
+        DOB.setForeground(new java.awt.Color(204, 204, 204));
         DOB.setText("Date of Birth");
 
+        Email.setForeground(new java.awt.Color(204, 204, 204));
         Email.setText("Email");
 
+        PhoneNumber.setBackground(new java.awt.Color(204, 204, 204));
         PhoneNumber.setText("Phone Number");
 
         jButton1.setText("Cancel");
@@ -170,13 +185,12 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
                             .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
-                        .addGap(99, 99, 99)))
+                        .addGap(93, 93, 93)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -188,7 +202,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -214,8 +228,9 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
                             .addComponent(jButton2)
                             .addComponent(jButton1))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 22, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(37, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,9 +241,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -278,7 +291,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                String patientEmail = JOptionPane.showInputDialog("Please enter the patient email");
+                /*String patientEmail = JOptionPane.showInputDialog("Please enter the patient email");
                 String filepath = "src\\hospitalmanager\\UserDatabase.csv";
                 String line = "";
                 boolean found = false;
@@ -315,18 +328,18 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
                 catch(Exception e)
                 {
 
-                }
-               // new DoctorPatientVisit().setVisible(true);
+                }*/
+                new DoctorPatientVisit().setVisible(true);
             }
         });
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel DOB;
-    private javax.swing.JLabel Email;
-    private javax.swing.JLabel Gender;
-    private javax.swing.JLabel Name;
-    private javax.swing.JLabel PhoneNumber;
+    public javax.swing.JLabel DOB;
+    public javax.swing.JLabel Email;
+    public javax.swing.JLabel Gender;
+    public javax.swing.JLabel Name;
+    public javax.swing.JLabel PhoneNumber;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
