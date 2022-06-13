@@ -306,10 +306,10 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel6))
@@ -362,11 +362,12 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LastNameActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        String filepath = "src\\hospitalmanager.Patient\\Appointments.csv";
         
         if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
             LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
-            Doctor.getSelectedItem().equals("Select"))
+            Doctor.getSelectedItem().equals("Select") || Date.getSelectedItem().equals("Select") ||
+            Month.getSelectedItem().equals("Select") || Year.getSelectedItem().equals("Select"))
         {
             if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
                 LastName.getText().equals("Last Name") || LastName.getText().equals("")) && 
@@ -385,13 +386,13 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         }
         else
         {
-            /*try
+            try
             {
                 FileWriter fw = new FileWriter(filepath, true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
 
-                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
+                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getSelectedItem()+','+
                            Doctor.getSelectedItem());
                 pw.flush();
                 pw.close();
@@ -402,7 +403,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             catch(Exception e)
             {
 
-            }*/
+            }
             
         }
         
@@ -468,10 +469,20 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         {
             Date.removeAllItems();
             Date.addItem("Select");
-            for (int i = 1; i <= 28; i++)
+            if (Year.getSelectedItem().equals("2024"))
             {
-                Date.addItem(i + "");
+                for (int i = 1; i <= 29; i++)
+                {
+                    Date.addItem(i + "");
+                }
             }
+            else
+            {
+                for (int i = 1; i <= 28; i++)
+                {
+                    Date.addItem(i + "");
+                }
+            }       
         }
         else
         {
@@ -490,6 +501,29 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         if(LastName.getText().length()==0)LastName.setText("Last Name");
         if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
         if(Email.getText().length()==0) Email.setText("Email");
+        
+        if (Year.getSelectedItem().equals("Select"))
+        {
+            Month.removeAllItems();
+            Month.addItem("Select");
+        }
+        else
+        {
+            Month.removeAllItems();
+            Month.addItem("Select");
+            Month.addItem("January");
+            Month.addItem("February");
+            Month.addItem("March");
+            Month.addItem("April");
+            Month.addItem("May");
+            Month.addItem("June");
+            Month.addItem("July");
+            Month.addItem("August");
+            Month.addItem("September");
+            Month.addItem("October");
+            Month.addItem("November");
+            Month.addItem("December");
+        }
     }//GEN-LAST:event_MonthFocusGained
 
     private void YearFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_YearFocusGained
