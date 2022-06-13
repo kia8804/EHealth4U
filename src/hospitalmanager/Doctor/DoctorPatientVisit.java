@@ -5,8 +5,10 @@
 package hospitalmanager.Doctor;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -39,7 +41,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Diagnosis = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -88,10 +90,10 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Diagnosis");
 
-        jTextArea1.setBackground(new java.awt.Color(58, 61, 63));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Diagnosis.setBackground(new java.awt.Color(58, 61, 63));
+        Diagnosis.setColumns(20);
+        Diagnosis.setRows(5);
+        jScrollPane1.setViewportView(Diagnosis);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -253,7 +255,41 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        String tempFilePath = "src\\hospitalmanager\\temp.csv";
+        File oldFile = new File(filepath);
+        File newFile = new File(tempFilePath);
+
+        String line = "";
+        String email = Email.getText();
+
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+            
+            FileWriter fw = new FileWriter(tempFilePath, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            while((line = br.readLine()) != null)
+            {
+                String[] user = line.split(",");
+                
+                for(int i = 0; i < user.length-1; i++)
+                {
+                    if(user[5].equals(email.trim())) user[10] = Diagnosis.getText().trim();
+                    pw.print(user[i]+",");
+                }
+                pw.println(user[user.length-1]);
+                
+            }
+            pw.flush();
+            pw.close();
+        }
+        catch(Exception e)
+        {
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
     
     public void popInfo()
@@ -336,6 +372,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel DOB;
+    private javax.swing.JTextArea Diagnosis;
     public javax.swing.JLabel Email;
     public javax.swing.JLabel Gender;
     public javax.swing.JLabel Name;
@@ -353,6 +390,5 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

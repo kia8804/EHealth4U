@@ -350,7 +350,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String email = (String)JOptionPane.showInputDialog(this, "Enter Patient Email Address", JOptionPane.PLAIN_MESSAGE);
+        String email = (String)JOptionPane.showInputDialog(this, "Enter Patient Email Address", JOptionPane.PLAIN_MESSAGE);
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         String line = "";
         boolean found = false;
@@ -394,43 +394,43 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String patientEmail = JOptionPane.showInputDialog("Please enter the patient email");
-                String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-                String line = "";
-                boolean found = false;
+        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        String line = "";
+        boolean found = false;
 
-                try
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+
+
+            while((line = br.readLine()) != null && !found)
+            {
+                String[] user = line.split(",");
+                if(user[0].contains("@guest.com"))
                 {
-                    BufferedReader br = new BufferedReader(new FileReader(filepath));
-
-
-                    while((line = br.readLine()) != null && !found)
+                    String Email = patientEmail;
+                    if(user[5].equals(Email))
                     {
-                        String[] user = line.split(",");
-                        if(user[0].contains("@guest.com"))
-                        {
-                            String Email = patientEmail;
-                            if(user[5].equals(Email))
-                            {
-                                DoctorPatientVisit stat = new DoctorPatientVisit();
-                                stat.Name.setText(user[2] + " " + user[3]);
-                                stat.Gender.setText(user[8]);
-                                stat.PhoneNumber.setText(user[4]);
-                                stat.Email.setText(user[5]);
-                                stat.DOB.setText(user[6]);
-                                stat.show();
-                                found = true;
-                            }
-                        }
-                    }
-                    if(!found)
-                    {
-                        JOptionPane.showMessageDialog(null, "Patient Not Found");
+                        DoctorPatientVisit stat = new DoctorPatientVisit();
+                        stat.Name.setText(user[2] + " " + user[3]);
+                        stat.Gender.setText(user[8]);
+                        stat.PhoneNumber.setText(user[4]);
+                        stat.Email.setText(user[5]);
+                        stat.DOB.setText(user[6]);
+                        stat.show();
+                        found = true;
                     }
                 }
-                catch(Exception e)
-                {
+            }
+            if(!found)
+            {
+                JOptionPane.showMessageDialog(null, "Patient Not Found");
+            }
+        }
+        catch(Exception e)
+        {
 
-                }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
