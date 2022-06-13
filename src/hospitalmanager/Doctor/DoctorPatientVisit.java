@@ -259,9 +259,10 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         String tempFilePath = "src\\hospitalmanager\\temp.csv";
         File oldFile = new File(filepath);
         File newFile = new File(tempFilePath);
+        File tempName = new File("src\\hospitalmanager\\new.csv");
 
         String line = "";
-        String email = Email.getText();
+        //String email = Email.getText();
 
         try
         {
@@ -277,7 +278,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
                 
                 for(int i = 0; i < user.length-1; i++)
                 {
-                    if(user[5].equals(email.trim())) user[10] = Diagnosis.getText().trim();
+                    if(user[5].equals("na")) user[10] = Diagnosis.getText().trim();
                     pw.print(user[i]+",");
                 }
                 pw.println(user[user.length-1]);
@@ -285,6 +286,9 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
             }
             pw.flush();
             pw.close();
+            oldFile.renameTo(tempName);
+            newFile.renameTo(oldFile);
+            oldFile.delete();
         }
         catch(Exception e)
         {
