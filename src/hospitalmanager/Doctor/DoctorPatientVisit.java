@@ -4,19 +4,17 @@
  */
 package hospitalmanager.Doctor;
 
+import static hospitalmanager.LoginStartupUI.updateCounter;
+//import java.awt.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.nio.file.Path;
-import java.util.Scanner;
-import javax.swing.JOptionPane;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -260,41 +258,49 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        /*String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-        String tempFilePath = "src\\hospitalmanager\\temp.csv";
-        Path source = Path.get("src\\hospitalmanager\\temp.csv");
-        Path target = Path.get("src\\hospitalmanager\\UserDatabase.csv");
-
-        String line = "";
-        //String email = Email.getText();
-
+        updateCounter++;
+        List<String[]> rowList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                String[] lineItems = line.split(",");
+                rowList.add(lineItems);
+            }
+            br.close();
+        }
+        catch(Exception e){
+            // Handle any I/O problems
+        }
+        String[][] matrix = new String[rowList.size()][];
+        for (int i = 0; i < rowList.size(); i++) {
+            String[] row = rowList.get(i);
+            matrix[i] = row;
+        }
+        
         try
         {
-            BufferedReader br = new BufferedReader(new FileReader(filepath));
-            
-            FileWriter fw = new FileWriter(tempFilePath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            
-            while((line = br.readLine()) != null)
-            {
-                String[] user = line.split(",");
-                
-                for(int i = 0; i < user.length-1; i++)
+            File file = new File("src\\hospitalmanager\\UserDatabase.csv");
+            FileWriter fw = new FileWriter(file);
+            PrintWriter pw = new PrintWriter(fw);
+
+            for (int i = 0; i < matrix.length; i++) {
+                for(int j = 0; j < matrix[i].length-1; j++)
                 {
-                    if(user[5].equals("na")) user[10] = Diagnosis.getText().trim();
-                    pw.print(user[i]+",");
+                    if(matrix[i][0].contains("@guest.com"))
+                    {
+                        matrix[i][10] = Diagnosis.getText();
+                    }
+                    pw.append(matrix[i][j]+",");
                 }
-                pw.println(user[user.length-1]);
-                
+                pw.append(matrix[i][matrix[i].length-1]+"\n");
             }
-            pw.flush();
             pw.close();
         }
         catch(Exception e)
         {
             
-        }*/
+        }
+
     }//GEN-LAST:event_jButton2ActionPerformed
     
     public void popInfo()

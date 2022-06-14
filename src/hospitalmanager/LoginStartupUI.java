@@ -20,12 +20,13 @@ import javax.swing.JOptionPane;
  * @author guest123
  */
 public class LoginStartupUI extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form LoginStartupUI
      */
     private static Scanner x;
-    
+    public static int updateCounter = 0;
+            
     public LoginStartupUI() {
         initComponents();
         Username.setBackground(new java.awt.Color(0,0,0,0));

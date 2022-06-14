@@ -142,6 +142,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
         jLabel3.setText("E-Mail");
 
         FName.setText("<First Name>");
+        FName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         LName.setText("<Last Name>");
         LName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -404,6 +405,11 @@ public class PatientStartupUI extends javax.swing.JFrame {
         );
 
         jButton2.setText("Request Appointment Change");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Schedule Appointment");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -531,6 +537,10 @@ public class PatientStartupUI extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

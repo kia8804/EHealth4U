@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author khuon
+ * @author guest123
  */
 public class AddAppointmentUI extends javax.swing.JFrame {
 
@@ -35,26 +35,27 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         FirstName = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         LastName = new javax.swing.JTextField();
-        Date = new javax.swing.JTextField();
+        Date = new javax.swing.JComboBox<>();
         Doctor = new javax.swing.JComboBox<>();
+        Month = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        Year = new javax.swing.JComboBox<>();
         Save = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Add patient");
-        setBackground(new java.awt.Color(0, 0, 0));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setForeground(new java.awt.Color(0, 0, 0));
-        setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(47, 47, 49));
-        jPanel1.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -68,6 +69,10 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Doctor");
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("Email");
+
         FirstName.setBackground(new java.awt.Color(36, 38, 39));
         FirstName.setForeground(new java.awt.Color(204, 204, 204));
         FirstName.setText("First Name");
@@ -79,6 +84,20 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         FirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FirstNameActionPerformed(evt);
+            }
+        });
+
+        Email.setBackground(new java.awt.Color(36, 38, 39));
+        Email.setForeground(new java.awt.Color(204, 204, 204));
+        Email.setText("Email");
+        Email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                EmailFocusGained(evt);
+            }
+        });
+        Email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmailActionPerformed(evt);
             }
         });
 
@@ -96,10 +115,9 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             }
         });
 
-        Date.setBackground(new java.awt.Color(36, 38, 39));
+        Date.setBackground(new java.awt.Color(0, 0, 0));
         Date.setForeground(new java.awt.Color(204, 204, 204));
-        Date.setText("MM/DD/YYYY");
-        Date.setToolTipText("");
+        Date.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Dr. Handsome boizzz", "Dr. Kiarash Mirkamandari" }));
         Date.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 DateFocusGained(evt);
@@ -120,12 +138,40 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             }
         });
 
+        Month.setBackground(new java.awt.Color(0, 0, 0));
+        Month.setForeground(new java.awt.Color(204, 204, 204));
+        Month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        Month.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                MonthFocusGained(evt);
+            }
+        });
+        Month.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MonthActionPerformed(evt);
+            }
+        });
+
         jButton1.setBackground(new java.awt.Color(25, 25, 25));
         jButton1.setForeground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        Year.setBackground(new java.awt.Color(0, 0, 0));
+        Year.setForeground(new java.awt.Color(204, 204, 204));
+        Year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "2022", "2023", "2024", "2025" }));
+        Year.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                YearFocusGained(evt);
+            }
+        });
+        Year.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YearActionPerformed(evt);
             }
         });
 
@@ -138,9 +184,17 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel11.setText("Month");
+
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("Date");
+        jLabel7.setText("Year");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("Date");
 
         jPanel2.setBackground(new java.awt.Color(42, 42, 44));
         jPanel2.setForeground(new java.awt.Color(51, 51, 51));
@@ -148,7 +202,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_calendar_32px_1.png"))); // NOI18N
-        jLabel2.setText("Add appointment");
+        jLabel2.setText("Request appointment");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -156,8 +210,8 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,6 +221,24 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("Phone Number");
+
+        PhoneNumber.setBackground(new java.awt.Color(36, 38, 39));
+        PhoneNumber.setForeground(new java.awt.Color(204, 204, 204));
+        PhoneNumber.setText("Phone Number");
+        PhoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PhoneNumberFocusGained(evt);
+            }
+        });
+        PhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PhoneNumberActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -174,60 +246,85 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel4)
-                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(Save)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1))
-                        .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(67, 67, 67)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addContainerGap(44, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(132, 132, 132)
+                .addComponent(Save)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(128, 128, 128))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save)
                     .addComponent(jButton1))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -235,76 +332,185 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FirstNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FirstNameFocusGained
-        String firstName = FirstName.getText();
-        if(firstName.equals("First Name"))FirstName.setText("");
-        String lastName = LastName.getText();
-        if(lastName.length()==0)LastName.setText("Last Name");
-        String date = Date.getText();
-        if(date.length()==0)Date.setText("MM/DD/YYYY");
+        if(FirstName.getText().equals("First Name"))FirstName.setText("");
+        if(LastName.getText().length()==0)LastName.setText("Last Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+        if(Email.getText().length()==0) Email.setText("Email");
     }//GEN-LAST:event_FirstNameFocusGained
 
     private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstNameActionPerformed
 
+    private void EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusGained
+        if(Email.getText().equals("Email")) Email.setText("");
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(LastName.getText().length()==0) LastName.setText("Last Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+    }//GEN-LAST:event_EmailFocusGained
+
+    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailActionPerformed
+
     private void LastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LastNameFocusGained
-        String lastName = LastName.getText();
-        if(lastName.equals("Last Name"))LastName.setText("");
-        String firstName = FirstName.getText();
-        if(firstName.length()==0)FirstName.setText("First Name");
-        String date = Date.getText();
-        if(date.length()==0)Date.setText("MM/DD/YYYY");
+        if(LastName.getText().equals("Last Name"))LastName.setText("");
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+        if(Email.getText().length()==0) Email.setText("Email");
     }//GEN-LAST:event_LastNameFocusGained
 
     private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LastNameActionPerformed
 
-    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DateActionPerformed
-
     private void DateFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateFocusGained
-        String date = Date.getText();
-        if(date.equals("MM/DD/YYYY"))Date.setText("");
-        String firstName = FirstName.getText();
-        if(firstName.length()==0)FirstName.setText("First Name");
-        String lastName = LastName.getText();
-        if(lastName.length()==0)LastName.setText("Last Name");
-    }//GEN-LAST:event_DateFocusGained
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(LastName.getText().length()==0)LastName.setText("Last Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+        if(Email.getText().length()==0) Email.setText("Email");
 
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-        
-        if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
-            LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
-            Date.getText().equals("MM/DD/YYYY") || Date.getText().equals("") || Doctor.getSelectedItem().equals("Select"))
+        if (Month.getSelectedItem().equals("Select"))
         {
-            if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
-                 LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
-                 Date.getText().equals("MM/DD/YYYY") || Date.getText().equals("")) && Doctor.getSelectedItem().equals("Select"))
+            Date.removeAllItems();
+            Date.addItem("Select");
+        }
+        else if (Month.getSelectedItem().equals("January") || Month.getSelectedItem().equals("March") ||
+            Month.getSelectedItem().equals("May") || Month.getSelectedItem().equals("July") ||
+            Month.getSelectedItem().equals("August") || Month.getSelectedItem().equals("October") ||
+            Month.getSelectedItem().equals("December"))
+        {
+            Date.removeAllItems();
+            Date.addItem("Select");
+            for (int i = 1; i <= 31; i++)
             {
-                JOptionPane.showMessageDialog(null, "Please fill all the fields and select a doctor");
+                Date.addItem(i + "");
             }
-            else if  (Doctor.getSelectedItem().equals("Select"))
+        }
+        else if (Month.getSelectedItem().equals("February"))
+        {
+            Date.removeAllItems();
+            Date.addItem("Select");
+            if (Year.getSelectedItem().equals("2024"))
             {
-                JOptionPane.showMessageDialog(null, "Please select a doctor");
+                for (int i = 1; i <= 29; i++)
+                {
+                    Date.addItem(i + "");
+                }
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+                for (int i = 1; i <= 28; i++)
+                {
+                    Date.addItem(i + "");
+                }
             }
         }
         else
         {
-            /*try
+            Date.removeAllItems();
+            Date.addItem("Select");
+            for (int i = 1; i <= 30; i++)
+            {
+                Date.addItem(i + "");
+            }
+
+        }
+    }//GEN-LAST:event_DateFocusGained
+
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateActionPerformed
+
+    private void DoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DoctorFocusGained
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(LastName.getText().length()==0)LastName.setText("Last Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+        if(Email.getText().length()==0) Email.setText("Email");
+    }//GEN-LAST:event_DoctorFocusGained
+
+    private void MonthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MonthFocusGained
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(LastName.getText().length()==0)LastName.setText("Last Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+        if(Email.getText().length()==0) Email.setText("Email");
+
+        if (Year.getSelectedItem().equals("Select"))
+        {
+            Month.removeAllItems();
+            Month.addItem("Select");
+        }
+        else
+        {
+            Month.removeAllItems();
+            Month.addItem("Select");
+            Month.addItem("January");
+            Month.addItem("February");
+            Month.addItem("March");
+            Month.addItem("April");
+            Month.addItem("May");
+            Month.addItem("June");
+            Month.addItem("July");
+            Month.addItem("August");
+            Month.addItem("September");
+            Month.addItem("October");
+            Month.addItem("November");
+            Month.addItem("December");
+        }
+    }//GEN-LAST:event_MonthFocusGained
+
+    private void MonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MonthActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void YearFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_YearFocusGained
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(LastName.getText().length()==0)LastName.setText("Last Name");
+        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
+        if(Email.getText().length()==0) Email.setText("Email");
+    }//GEN-LAST:event_YearFocusGained
+
+    private void YearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YearActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        String filepath = "src\\hospitalmanager.Patient\\Appointments.csv";
+
+        if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") ||
+            LastName.getText().equals("Last Name") || LastName.getText().equals("") ||
+            Doctor.getSelectedItem().equals("Select") || Date.getSelectedItem().equals("Select") ||
+            Month.getSelectedItem().equals("Select") || Year.getSelectedItem().equals("Select"))
+        {
+            if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") ||
+                LastName.getText().equals("Last Name") || LastName.getText().equals("")) &&
+            Doctor.getSelectedItem().equals("Select"))
+        {
+            JOptionPane.showMessageDialog(null, "Please fill all the fields and select a doctor");
+        }
+        else if  (Doctor.getSelectedItem().equals("Select"))
+        {
+            JOptionPane.showMessageDialog(null, "Please select a doctor");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please fill all the fields");
+        }
+        }
+        else
+        {
+            try
             {
                 FileWriter fw = new FileWriter(filepath, true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
 
-                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getText()+','+
-                           Doctor.getSelectedItem());
+                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getSelectedItem()+','+
+                    Doctor.getSelectedItem());
                 pw.flush();
                 pw.close();
 
@@ -314,23 +520,22 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             catch(Exception e)
             {
 
-            }*/
+            }
+
         }
-        
+
     }//GEN-LAST:event_SaveActionPerformed
 
-    private void DoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DoctorFocusGained
-        String firstName = FirstName.getText();
-        if(firstName.length()==0)FirstName.setText("First Name");
-        String lastName = LastName.getText();
-        if(lastName.length()==0)LastName.setText("Last Name");
-        String date = Date.getText();
-        if(date.length()==0)Date.setText("MM/DD/YYYY");
-    }//GEN-LAST:event_DoctorFocusGained
+    private void PhoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PhoneNumberFocusGained
+        if(PhoneNumber.getText().equals("Phone Number")) PhoneNumber.setText("");
+        if(FirstName.getText().length()==0)FirstName.setText("First Name");
+        if(LastName.getText().length()==0) LastName.setText("Last Name");
+        if(Email.getText().length()==0) Email.setText("Email");
+    }//GEN-LAST:event_PhoneNumberFocusGained
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void PhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PhoneNumberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,9 +563,6 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AddAppointmentUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -371,17 +573,26 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Date;
+    private javax.swing.JComboBox<String> Date;
     private javax.swing.JComboBox<String> Doctor;
+    private javax.swing.JTextField Email;
     private javax.swing.JTextField FirstName;
+    private javax.swing.JTextField FirstName1;
     private javax.swing.JTextField LastName;
+    private javax.swing.JComboBox<String> Month;
+    private javax.swing.JTextField PhoneNumber;
     private javax.swing.JButton Save;
+    public javax.swing.JComboBox<String> Year;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
