@@ -10,8 +10,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  *
@@ -255,11 +260,10 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+        /*String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         String tempFilePath = "src\\hospitalmanager\\temp.csv";
-        File oldFile = new File(filepath);
-        File newFile = new File(tempFilePath);
-        File tempName = new File("src\\hospitalmanager\\new.csv");
+        Path source = Path.get("src\\hospitalmanager\\temp.csv");
+        Path target = Path.get("src\\hospitalmanager\\UserDatabase.csv");
 
         String line = "";
         //String email = Email.getText();
@@ -286,14 +290,11 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
             }
             pw.flush();
             pw.close();
-            oldFile.renameTo(tempName);
-            newFile.renameTo(oldFile);
-            oldFile.delete();
         }
         catch(Exception e)
         {
             
-        }
+        }*/
     }//GEN-LAST:event_jButton2ActionPerformed
     
     public void popInfo()

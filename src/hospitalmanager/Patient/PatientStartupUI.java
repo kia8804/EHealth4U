@@ -142,7 +142,6 @@ public class PatientStartupUI extends javax.swing.JFrame {
         jLabel3.setText("E-Mail");
 
         FName.setText("<First Name>");
-        FName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         LName.setText("<Last Name>");
         LName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
