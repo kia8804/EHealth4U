@@ -181,9 +181,7 @@ public class SignUp2 extends javax.swing.JFrame {
     }//GEN-LAST:event_FirstSecurityFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        SignUp previousPage = new SignUp();
-        
-        
+       
         if(!Password.equals("") && !FirstSecurity.equals("") && !SecondSecurity.equals("") && ThirdSecurity.equals(""))
         {
             JOptionPane.showMessageDialog(null, "Please Complete All Prompts");
@@ -196,8 +194,8 @@ public class SignUp2 extends javax.swing.JFrame {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             
-            pw.println(Username.getText()+','+Password.getText()+","+previousPage.FirstN.getText()+","+previousPage.LastN.getText()+","+previousPage.PhoneN.getText()+","+
-                       previousPage.EmailA.getText()+","+previousPage.DateOB.getText()+","+previousPage.HomeA.getText()+","+previousPage.Gender.getText()+"na"+"na"+FirstSecurity.getText()+","+
+            pw.println(Username.getText()+','+Password.getText()+","+next.FirstN.getText()+","+next.LastN.getText()+","+next.PhoneN.getText()+","+
+                       next.EmailA.getText()+","+next.DateOB.getText()+","+next.HomeA.getText()+","+next.Gender.getText()+"na"+"na"+FirstSecurity.getText()+","+
                        SecondSecurity.getText()+","+ThirdSecurity.getText());
             pw.flush();
             pw.close();
@@ -209,7 +207,9 @@ public class SignUp2 extends javax.swing.JFrame {
         {
             
         }
-
+        LoginStartupUI login = new LoginStartupUI();
+        login.show();
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -249,11 +249,13 @@ public class SignUp2 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SignUp2().setVisible(true);
+                next.show();
+                //new SignUp2().setVisible(true);
             }
         });
     }
-
+    
+    public static SignUp next = new SignUp();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FirstSecurity;
     private javax.swing.JPasswordField Password;
