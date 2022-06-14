@@ -4,7 +4,6 @@
  */
 package hospitalmanager.Doctor;
 
-import static hospitalmanager.LoginStartupUI.updateCounter;
 //import java.awt.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -258,7 +257,6 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        updateCounter++;
         List<String[]> rowList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) {
             String line = "";
@@ -286,7 +284,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
             for (int i = 0; i < matrix.length; i++) {
                 for(int j = 0; j < matrix[i].length-1; j++)
                 {
-                    if(matrix[i][0].contains("@guest.com"))
+                    if(matrix[i][4].equals(PhoneNumber.getText()))
                     {
                         matrix[i][10] = Diagnosis.getText();
                     }

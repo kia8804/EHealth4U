@@ -22,6 +22,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
      */
     public DoctorStartUpUI() {
         initComponents();
+        //DrStartup.setText("");
     }
 
     /**
@@ -393,7 +394,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String patientEmail = JOptionPane.showInputDialog("Please enter the patient email");
+        String patientEmail = JOptionPane.showInputDialog("Please enter the patient phone number");
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         String line = "";
         boolean found = false;

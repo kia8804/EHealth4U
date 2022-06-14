@@ -1,5 +1,5 @@
-Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender,Availability,Status
-user1@guest.com,1234,Jim,Tim,na,na,na,na,na,na,na
-user2@guest.com,1234,Kiarash,Mirkamandari,IDK,kiamirk,Some day in 2004,Somewhere in Guelph,Male,na,na
-user2@doctor.com,1234,John,Tom,na,na,na,na,na,Available,na
-user3@front.com,1234,Kim,Lin,na,kiamirk,na,na,na,na,na
+Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender,Availability,Status,Security Question 1,Security Question 2,Security Question 3
+user1@guest.com,1234,Jim,Tim,na,na,na,na,na,na,na,food,name,sport
+user2@guest.com,1234,Kiarash,Mirkamandari,IDK,kiamirk,Some day in 2004,Somewhere in Guelph,Male,na,na,food,name,sport
+user2@doctor.com,1234,John,Tom,na,na,na,na,na,Available,na,food,name,sport
+user3@front.com,1234,Kim,Lin,na,kiamirk,na,na,na,na,na,food,name,sport

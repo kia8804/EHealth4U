@@ -120,7 +120,7 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Register");
+        jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -158,9 +158,9 @@ public class SignUp extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton2)))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -327,29 +327,10 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_GenderFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-        String username = LastN.getText() + FirstN.getText() + "@patient.com";
-        int password = ((int) (Math.random()*(100000 - 9999))) + 9999;
-
+        SignUp2 nextPage = new SignUp2();
+        nextPage.show();
         
-        try
-        {
-            FileWriter fw = new FileWriter(filepath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            
-            pw.println(username+','+password+','+FirstN.getText()+','+LastN.getText()+','+PhoneN.getText()+','+
-                       EmailA.getText()+','+DateOB.getText()+','+HomeA.getText()+','+Gender.getText()+"na");
-            pw.flush();
-            pw.close();
-            
-            JOptionPane.showMessageDialog(null, "record saved");
-            
-        }
-        catch(Exception e)
-        {
-            
-        }
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -388,13 +369,13 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DateOB;
-    private javax.swing.JTextField EmailA;
-    private javax.swing.JTextField FirstN;
-    private javax.swing.JTextField Gender;
-    private javax.swing.JTextField HomeA;
-    private javax.swing.JTextField LastN;
-    private javax.swing.JTextField PhoneN;
+    public javax.swing.JTextField DateOB;
+    public javax.swing.JTextField EmailA;
+    public javax.swing.JTextField FirstN;
+    public javax.swing.JTextField Gender;
+    public javax.swing.JTextField HomeA;
+    public javax.swing.JTextField LastN;
+    public javax.swing.JTextField PhoneN;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
