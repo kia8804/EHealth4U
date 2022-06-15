@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-/**
+/*
  *
  * @author khuon
  */
