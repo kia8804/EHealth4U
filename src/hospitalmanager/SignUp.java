@@ -333,8 +333,27 @@ public class SignUp extends javax.swing.JFrame {
         EmailAddress = EmailA.getText();
         DateOfBirth = DateOB.getText();
         HomeAddress = HomeA.getText();
-        Gend = Gender.getText();
-        UserName = FirstName.substring(0,1) + LastName + "@guest.com";
+        Gend = Gender.getText();       
+        UserName = FirstName.trim().substring(0,1).toLowerCase() + LastName.trim().toLowerCase() + "@guest.com";
+        int count = 1;
+        boolean found = true;
+        while (found)
+        {
+            found = false;
+            
+            for (int i = 0;i < LoginStartupUI.matrix.length;i++)
+            {
+                if (UserName.equals(LoginStartupUI.matrix[i][0]))
+                {
+                    UserName = FirstName.trim().substring(0,1).toLowerCase() + LastName.trim().toLowerCase() + count + "@guest.com";
+                    count++;
+                    found = true;
+                }
+
+            }
+        }
+        
+        
         SignUp2 nextPage = new SignUp2();
         nextPage.Username.setText(UserName);
         nextPage.show();
