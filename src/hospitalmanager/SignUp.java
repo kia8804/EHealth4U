@@ -334,8 +334,9 @@ public class SignUp extends javax.swing.JFrame {
         DateOfBirth = DateOB.getText();
         HomeAddress = HomeA.getText();
         Gend = Gender.getText();
-        
+        UserName = FirstName.substring(0,1) + LastName + "@guest.com";
         SignUp2 nextPage = new SignUp2();
+        nextPage.Username.setText(UserName);
         nextPage.show();
         
         dispose();
@@ -383,7 +384,7 @@ public class SignUp extends javax.swing.JFrame {
     public static String DateOfBirth;
     public static String HomeAddress;
     public static String Gend;
-    
+    public static String UserName;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
