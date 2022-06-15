@@ -9,10 +9,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author guest123
- */
+
 public class SignUp2 extends javax.swing.JFrame {
 
     /**

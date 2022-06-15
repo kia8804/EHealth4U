@@ -6,6 +6,7 @@ package hospitalmanager;
 import hospitalmanager.Patient.PatientStartupUI;
 import hospitalmanager.FrontDesk.FrontDeskStartUpUI;
 import hospitalmanager.Doctor.DoctorStartUpUI;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -87,6 +88,11 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 PasswordActionPerformed(evt);
             }
         });
+        Password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordKeyPressed(evt);
+            }
+        });
         jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 211, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -115,6 +121,11 @@ public class LoginStartupUI extends javax.swing.JFrame {
         Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameActionPerformed(evt);
+            }
+        });
+        Username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UsernameKeyPressed(evt);
             }
         });
         jPanel1.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 210, 30));
@@ -382,6 +393,140 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private void jButton4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton4FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4FocusGained
+
+    private void PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+            String username = Username.getText();
+            String password = Password.getText();
+            boolean found = false;
+
+            try
+            {
+                File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
+                Scanner scan = new Scanner(filex);
+                scan.useDelimiter("[,\n]");
+
+                while(scan.hasNext() && !found)
+                {
+                    String usernamex = scan.next();
+                    String passwordx = scan.next();
+                    for(int i = 0; i < 12; i++)scan.next();
+
+                    if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
+                    {
+                        found = true;
+                    }
+                }
+                if(found && username.contains("@guest.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
+                    PatientStartupUI nextPage = new PatientStartupUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(found && username.contains("@doctor.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                    DoctorStartUpUI nextPage = new DoctorStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(found && username.contains("@front.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
+                    FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(!found)
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+                    Username.setText("Username");
+                    Password.setText("Password");
+                }
+
+            }
+
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "An error occured! "+e);
+            }
+        }
+    }//GEN-LAST:event_PasswordKeyPressed
+
+    private void UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+            String username = Username.getText();
+            String password = Password.getText();
+            boolean found = false;
+
+            try
+            {
+                File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
+                Scanner scan = new Scanner(filex);
+                scan.useDelimiter("[,\n]");
+
+                while(scan.hasNext() && !found)
+                {
+                    String usernamex = scan.next();
+                    String passwordx = scan.next();
+                    for(int i = 0; i < 12; i++)scan.next();
+
+                    if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
+                    {
+                        found = true;
+                    }
+                }
+                if(found && username.contains("@guest.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
+                    PatientStartupUI nextPage = new PatientStartupUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(found && username.contains("@doctor.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                    DoctorStartUpUI nextPage = new DoctorStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(found && username.contains("@front.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
+                    FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(!found)
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+                    Username.setText("Username");
+                    Password.setText("Password");
+                }
+
+            }
+
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "An error occured! "+e);
+            }
+        }
+    }//GEN-LAST:event_UsernameKeyPressed
 
     /**
      * @param args the command line arguments

@@ -479,7 +479,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_YearActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        String filepath = "src\\hospitalmanager.Patient\\Appointments.csv";
+        String filepath = "src\\hospitalmanager\\Appointments.csv";
 
         if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") ||
             LastName.getText().equals("Last Name") || LastName.getText().equals("") ||
@@ -489,17 +489,17 @@ public class AddAppointmentUI extends javax.swing.JFrame {
             if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") ||
                 LastName.getText().equals("Last Name") || LastName.getText().equals("")) &&
             Doctor.getSelectedItem().equals("Select"))
-        {
+            {
             JOptionPane.showMessageDialog(null, "Please fill all the fields and select a doctor");
-        }
-        else if  (Doctor.getSelectedItem().equals("Select"))
-        {
-            JOptionPane.showMessageDialog(null, "Please select a doctor");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Please fill all the fields");
-        }
+            }
+            else if  (Doctor.getSelectedItem().equals("Select"))
+            {
+                JOptionPane.showMessageDialog(null, "Please select a doctor");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            }
         }
         else
         {
@@ -508,9 +508,26 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                 FileWriter fw = new FileWriter(filepath, true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
-
-                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getSelectedItem()+','+
-                    Doctor.getSelectedItem());
+                
+                int dateValue = 0;
+                
+                if(Month.getSelectedItem().equals("January")) dateValue+=30;
+                else if(Month.getSelectedItem().equals("February")) dateValue+=60;
+                else if(Month.getSelectedItem().equals("March")) dateValue+=90;
+                else if(Month.getSelectedItem().equals("April")) dateValue+=120;
+                else if(Month.getSelectedItem().equals("May")) dateValue+=150;
+                else if(Month.getSelectedItem().equals("June")) dateValue+=180;
+                else if(Month.getSelectedItem().equals("July")) dateValue+=210;
+                else if(Month.getSelectedItem().equals("August")) dateValue+=240;
+                else if(Month.getSelectedItem().equals("September")) dateValue+=270;
+                else if(Month.getSelectedItem().equals("October")) dateValue+=300;
+                else if(Month.getSelectedItem().equals("November")) dateValue+=330;
+                else if(Month.getSelectedItem().equals("December")) dateValue+=360;
+                    
+                dateValue+=Date.getSelectedIndex();
+                    
+                pw.println(dateValue+","+FirstName.getText()+","+LastName.getText()+","+PhoneNumber.getText()+","+Email.getText()+","+
+                    Doctor.getSelectedItem()+","+Date.getSelectedItem()+","+Month.getSelectedItem()+","+Year.getSelectedItem());
                 pw.flush();
                 pw.close();
 
@@ -577,7 +594,6 @@ public class AddAppointmentUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Doctor;
     private javax.swing.JTextField Email;
     private javax.swing.JTextField FirstName;
-    private javax.swing.JTextField FirstName1;
     private javax.swing.JTextField LastName;
     private javax.swing.JComboBox<String> Month;
     private javax.swing.JTextField PhoneNumber;
