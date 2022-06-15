@@ -181,7 +181,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        SignUp2 register = new SignUp2();
+        SignUp register = new SignUp();
         register.show();
         
         dispose();

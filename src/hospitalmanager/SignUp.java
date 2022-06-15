@@ -327,6 +327,14 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_GenderFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        FirstName = FirstN.getText();
+        LastName = LastN.getText();
+        PhoneNumber = PhoneN.getText();
+        EmailAddress = EmailA.getText();
+        DateOfBirth = DateOB.getText();
+        HomeAddress = HomeA.getText();
+        Gend = Gender.getText();
+        
         SignUp2 nextPage = new SignUp2();
         nextPage.show();
         
@@ -367,6 +375,16 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
     }
+    
+    static public String FirstName;
+    public static String LastName;
+    public static String PhoneNumber;
+    public static String EmailAddress;
+    public static String DateOfBirth;
+    public static String HomeAddress;
+    public static String Gend;
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField DateOB;
