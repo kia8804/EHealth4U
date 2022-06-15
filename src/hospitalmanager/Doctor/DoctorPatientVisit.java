@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -298,6 +299,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         {
             
         }
+        JOptionPane.showMessageDialog(null, "Patient Diagnosis Updated");
 
     }//GEN-LAST:event_jButton2ActionPerformed
     
