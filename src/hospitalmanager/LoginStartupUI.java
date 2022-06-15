@@ -193,23 +193,27 @@ public class LoginStartupUI extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         List<String[]> rowList = new ArrayList<>();
-                try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) {
-                    String line = "";
-                    while ((line = br.readLine()) != null) {
-                        String[] lineItems = line.split(",");
-                        rowList.add(lineItems);
-                    }
-                    br.close();
-                }
-                catch(Exception e){
-                    // Handle any I/O problems
-                }
-                matrix = new String[rowList.size()][];
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) 
+        {
+            String line = "";
+            while ((line = br.readLine()) != null) 
+            {
+                String[] lineItems = line.split(",");
+                rowList.add(lineItems);
+            }
+            br.close();
+        }
+        catch(Exception e)
+        {
+            // Handle any I/O problems
+        }
+        matrix = new String[rowList.size()][];
                 
-                for (int i = 0; i < rowList.size(); i++) {
-                    String[] row = rowList.get(i);
-                    matrix[i] = row;
-                }
+        for (int i = 0; i < rowList.size(); i++) 
+        {
+            String[] row = rowList.get(i);
+            matrix[i] = row;
+        }
         SignUp register = new SignUp();
         register.show();
         
@@ -627,7 +631,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Password;
-    private javax.swing.JTextField Username;
+    public javax.swing.JTextField Username;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
