@@ -86,6 +86,11 @@ public class SignUp2 extends javax.swing.JFrame {
 
         Username.setText("Username");
         Username.setFocusable(false);
+        Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -184,30 +189,33 @@ public class SignUp2 extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Please Complete All Prompts");
         }
+        else
+        {
+            String filepath = "src\\hospitalmanager\\UserDatabase.csv";
+            try
+            {
+                FileWriter fw = new FileWriter(filepath, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter pw = new PrintWriter(bw);
+
+                pw.println(Username.getText()+','+Password.getText()+","+SignUp.FirstName+","+SignUp.LastName+","+SignUp.PhoneNumber+","+
+                           SignUp.EmailAddress+","+SignUp.DateOfBirth+","+SignUp.HomeAddress+","+SignUp.Gend+",na"+",na,"+FirstSecurity.getText()+","+
+                           SecondSecurity.getText()+","+ThirdSecurity.getText());
+                pw.flush();
+                pw.close();
+
+                JOptionPane.showMessageDialog(null, "record saved");
+
+            }
+            catch(Exception e)
+            {
+
+            }
+            LoginStartupUI login = new LoginStartupUI();
+            login.show();
+            dispose();
+        }
         
-        String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-        try
-        {
-            FileWriter fw = new FileWriter(filepath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            
-            pw.println(Username.getText()+','+Password.getText()+","+SignUp.FirstName+","+SignUp.LastName+","+SignUp.PhoneNumber+","+
-                       SignUp.EmailAddress+","+SignUp.DateOfBirth+","+SignUp.HomeAddress+","+SignUp.Gend+",na"+",na,"+FirstSecurity.getText()+","+
-                       SecondSecurity.getText()+","+ThirdSecurity.getText());
-            pw.flush();
-            pw.close();
-            
-            JOptionPane.showMessageDialog(null, "record saved");
-            
-        }
-        catch(Exception e)
-        {
-            
-        }
-        LoginStartupUI login = new LoginStartupUI();
-        login.show();
-        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -216,6 +224,10 @@ public class SignUp2 extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,7 +271,7 @@ public class SignUp2 extends javax.swing.JFrame {
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField SecondSecurity;
     private javax.swing.JTextField ThirdSecurity;
-    private javax.swing.JTextField Username;
+    public javax.swing.JTextField Username;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
