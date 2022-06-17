@@ -382,17 +382,6 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeAFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        boolean valid = true;
-        
-        String phone = PhoneN.getText().trim().replaceAll(" ", "");
-        if (phone.length() != 10)
-        {
-            valid = false;
-        }
-        else
-        {
-            int[] num = {0,1,2,3,4,5,6,7,8,9};
-        }
         if (FirstN.getText().equals("First Name") || FirstN.getText().equals("") || 
             LastN.getText().equals("Last Name") || LastN.getText().equals("") || 
             Gender.getSelectedItem().equals("Select") || Date.getSelectedItem().equals("Select") ||
