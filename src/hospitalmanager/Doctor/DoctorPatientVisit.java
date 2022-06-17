@@ -258,49 +258,52 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        List<String[]> rowList = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) {
-            String line = "";
-            while ((line = br.readLine()) != null) {
-                String[] lineItems = line.split(",");
-                rowList.add(lineItems);
-            }
-            br.close();
-        }
-        catch(Exception e){
-            // Handle any I/O problems
-        }
-        String[][] matrix = new String[rowList.size()][];
-        for (int i = 0; i < rowList.size(); i++) {
-            String[] row = rowList.get(i);
-            matrix[i] = row;
-        }
-        
-        try
+        if(Diagnosis.getText().equals(""))JOptionPane.showMessageDialog(null,"Incomplete Diagnosis");
+        else
         {
-            File file = new File("src\\hospitalmanager\\UserDatabase.csv");
-            FileWriter fw = new FileWriter(file);
-            PrintWriter pw = new PrintWriter(fw);
-
-            for (int i = 0; i < matrix.length; i++) {
-                for(int j = 0; j < matrix[i].length-1; j++)
-                {
-                    if(matrix[i][4].equals(PhoneNumber.getText()))
-                    {
-                        matrix[i][10] = Diagnosis.getText();
-                    }
-                    pw.append(matrix[i][j]+",");
+            List<String[]> rowList = new ArrayList<>();
+            try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) {
+                String line = "";
+                while ((line = br.readLine()) != null) {
+                    String[] lineItems = line.split(",");
+                    rowList.add(lineItems);
                 }
-                pw.append(matrix[i][matrix[i].length-1]+"\n");
+                br.close();
             }
-            pw.close();
-        }
-        catch(Exception e)
-        {
-            
-        }
-        JOptionPane.showMessageDialog(null, "Patient Diagnosis Updated");
+            catch(Exception e){
+                // Handle any I/O problems
+            }
+            String[][] matrix = new String[rowList.size()][];
+            for (int i = 0; i < rowList.size(); i++) {
+                String[] row = rowList.get(i);
+                matrix[i] = row;
+            }
 
+            try
+            {
+                File file = new File("src\\hospitalmanager\\UserDatabase.csv");
+                FileWriter fw = new FileWriter(file);
+                PrintWriter pw = new PrintWriter(fw);
+
+                for (int i = 0; i < matrix.length; i++) {
+                    for(int j = 0; j < matrix[i].length-1; j++)
+                    {
+                        if(matrix[i][4].equals(PhoneNumber.getText()))
+                        {
+                            matrix[i][10] = Diagnosis.getText();
+                        }
+                        pw.append(matrix[i][j]+",");
+                    }
+                    pw.append(matrix[i][matrix[i].length-1]+"\n");
+                }
+                pw.close();
+            }
+            catch(Exception e)
+            {
+
+            }
+            JOptionPane.showMessageDialog(null, "Patient Diagnosis Updated");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
     
     public void popInfo()
@@ -338,44 +341,7 @@ public class DoctorPatientVisit extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                /*String patientEmail = JOptionPane.showInputDialog("Please enter the patient email");
-                String filepath = "src\\hospitalmanager\\UserDatabase.csv";
-                String line = "";
-                boolean found = false;
-
-                try
-                {
-                    BufferedReader br = new BufferedReader(new FileReader(filepath));
-
-
-                    while((line = br.readLine()) != null && !found)
-                    {
-                        String[] user = line.split(",");
-                        if(user[0].contains("@guest.com"))
-                        {
-                            String Email = patientEmail;
-                            if(user[5].equals(Email))
-                            {
-                                DoctorPatientVisit stat = new DoctorPatientVisit();
-                                stat.Name.setText(user[2] + " " + user[3]);
-                                stat.Gender.setText(user[8]);
-                                stat.PhoneNumber.setText(user[4]);
-                                stat.Email.setText(user[5]);
-                                stat.DOB.setText(user[6]);
-                                stat.show();
-                                found = true;
-                            }
-                        }
-                    }
-                    if(!found)
-                    {
-                        JOptionPane.showMessageDialog(null, "Patient Not Found");
-                    }
-                }
-                catch(Exception e)
-                {
-
-                }*/
+               
                 new DoctorPatientVisit().setVisible(true);
             }
         });

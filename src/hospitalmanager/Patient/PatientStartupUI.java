@@ -5,6 +5,8 @@
 package hospitalmanager.Patient;
 
 import hospitalmanager.LoginStartupUI;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  *
@@ -17,6 +19,33 @@ public class PatientStartupUI extends javax.swing.JFrame {
      */
     public PatientStartupUI() {
         initComponents();
+        LoginStartupUI login = new LoginStartupUI();
+                
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv")))
+        {
+            String line = "";
+            while((line = br.readLine()) != null)
+            {
+                String[] user = line.split(",");
+                if(user[0].equals(login.Username.getText()))
+                {
+                    FName.setText(user[2]);
+                    LName.setText(user[3].trim());
+                    DateOB.setText(user[6].trim());
+                    Sex.setText(user[8].trim());
+                    PhoneN.setText(user[4].trim());
+                    Email.setText(user[5].trim());
+                    HomeAddress.setText(user[7].trim());
+                }
+            }
+            br.close();
+        }
+        catch(Exception e)
+        {
+            
+        }
+        
+        
     }
 
     /**
@@ -528,7 +557,8 @@ public class PatientStartupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        RequestAppointmentUI nextPage = new RequestAppointmentUI();
+        nextPage.show();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -539,7 +569,8 @@ public class PatientStartupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        RequestAppointmentChangeUI nextPage = new RequestAppointmentChangeUI();
+        nextPage.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
