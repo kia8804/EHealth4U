@@ -107,7 +107,7 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
 
         Doctor.setBackground(new java.awt.Color(0, 0, 0));
         Doctor.setForeground(new java.awt.Color(204, 204, 204));
-        Doctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Dr. Handsome boizzz", "Dr. Kiarash Mirkamandari" }));
+        Doctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Dr. Jim Tim", "Dr. Kiarash Mirkamandari" }));
         Doctor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 DoctorFocusGained(evt);

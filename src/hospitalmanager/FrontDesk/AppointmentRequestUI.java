@@ -4,6 +4,13 @@
  */
 package hospitalmanager.FrontDesk;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author guest123
@@ -15,6 +22,28 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
      */
     public AppointmentRequestUI() {
         initComponents();
+        
+        String filepath = "src\\hospitalmanager\\AppointmentRequests.csv";
+        String line = "";
+
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+
+            br.readLine();
+            while((line = br.readLine()) != null)
+            {
+                String[] appointment = line.split(",");
+                DefaultTableModel tblModel = (DefaultTableModel)Requests.getModel();
+                appointment = new String[]{appointment[0],appointment[1],appointment[2], appointment[3], appointment[4], appointment[5]};
+                tblModel.addRow(appointment);
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
+
     }
 
     /**
@@ -28,7 +57,7 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Requests = new javax.swing.JTable();
         PhoneNumber = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         EmailAddress = new javax.swing.JTextField();
@@ -36,19 +65,19 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Requests.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "First Name", "Last Name", "Phone Number", "Email", "Date"
+                "First Name", "Last Name", "Phone Number", "Email", "Date", "Doctor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -59,14 +88,15 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        Requests.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(Requests);
+        if (Requests.getColumnModel().getColumnCount() > 0) {
+            Requests.getColumnModel().getColumn(0).setResizable(false);
+            Requests.getColumnModel().getColumn(1).setResizable(false);
+            Requests.getColumnModel().getColumn(2).setResizable(false);
+            Requests.getColumnModel().getColumn(3).setResizable(false);
+            Requests.getColumnModel().getColumn(4).setResizable(false);
+            Requests.getColumnModel().getColumn(5).setResizable(false);
         }
 
         PhoneNumber.setText("Phone Number");
@@ -82,6 +112,11 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
         });
 
         jButton1.setText("Accept Appointment");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         EmailAddress.setText("Email Address");
         EmailAddress.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -149,6 +184,55 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
         if(PhoneNumber.getText().equals(""))PhoneNumber.setText("Phone Number");
     }//GEN-LAST:event_EmailAddressFocusGained
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String filepath = "src\\hospitalmanager\\AppointmentRequests.csv";
+        String line = "";
+
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+
+            br.readLine();
+            while((line = br.readLine()) != null)
+            {
+                String[] appointment = line.split(",");
+                if(appointment[2].equals(PhoneNumber.getText()) && appointment[3].equals(EmailAddress.getText()))
+                {
+                    appointment = new String[]{appointment[0],appointment[1],appointment[2], appointment[3], appointment[4], appointment[5]};
+                    String filepath2 = "src\\hospitalmanager\\Appointments.csv";
+                    try
+                    {
+                        FileWriter fw = new FileWriter(filepath2, true);
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        PrintWriter pw = new PrintWriter(bw);
+
+                        pw.println("na"+appointment[0]+','+appointment[1]+','+appointment[2]+','+appointment[3]+','+appointment[4]+','+appointment[5]);
+                        pw.flush();
+                        pw.close();
+
+                        JOptionPane.showMessageDialog(null, "Appointment Created");
+                        }
+                    catch(Exception e)
+                    {
+
+                    }
+                    return;
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid Entry");
+                }
+        
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
+        
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -187,9 +271,9 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailAddress;
     private javax.swing.JTextField PhoneNumber;
+    private javax.swing.JTable Requests;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
