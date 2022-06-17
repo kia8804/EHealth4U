@@ -362,7 +362,7 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LastNameActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        String filepath = "src\\hospitalmanager.Patient\\AppointmentRequests.csv";
+        String filepath = "src\\hospitalmanager\\AppointmentRequests.csv";
         
         if (FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
             LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
@@ -392,7 +392,7 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
 
-                pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getSelectedItem()+','+
+                pw.println(FirstName.getText()+','+LastName.getText()+','+PhoneNumber.getText()+','+Email.getText()+','+Date.getSelectedItem()+'/'+Month.getSelectedItem()+'/'+Year.getSelectedItem()+','+
                            Doctor.getSelectedItem());
                 pw.flush();
                 pw.close();
