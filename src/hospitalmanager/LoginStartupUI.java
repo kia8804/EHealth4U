@@ -192,6 +192,28 @@ public class LoginStartupUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        List<String[]> rowList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv"))) 
+        {
+            String line = "";
+            while ((line = br.readLine()) != null) 
+            {
+                String[] lineItems = line.split(",");
+                rowList.add(lineItems);
+            }
+            br.close();
+        }
+        catch(Exception e)
+        {
+            // Handle any I/O problems
+        }
+        matrix = new String[rowList.size()][];
+                
+        for (int i = 0; i < rowList.size(); i++) 
+        {
+            String[] row = rowList.get(i);
+            matrix[i] = row;
+        }
         SignUp register = new SignUp();
         register.show();
         
@@ -330,7 +352,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                     // Handle any I/O problems
                 }
                 
-                String[][] matrix = new String[rowList.size()][];
+                matrix = new String[rowList.size()][];
                 
                 for (int i = 0; i < rowList.size(); i++) {
                     String[] row = rowList.get(i);
@@ -604,7 +626,9 @@ public class LoginStartupUI extends javax.swing.JFrame {
         }
 
     }
-
+    
+    public static String[][] matrix;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Password;
     public javax.swing.JTextField Username;

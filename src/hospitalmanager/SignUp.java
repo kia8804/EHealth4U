@@ -36,11 +36,22 @@ public class SignUp extends javax.swing.JFrame {
         PhoneN = new javax.swing.JTextField();
         EmailA = new javax.swing.JTextField();
         FirstN = new javax.swing.JTextField();
-        DateOB = new javax.swing.JTextField();
         HomeA = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        Gender = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Date = new javax.swing.JComboBox<>();
+        Year = new javax.swing.JComboBox<>();
+        Month = new javax.swing.JComboBox<>();
+        Gender = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -96,18 +107,6 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        DateOB.setText("Date of Birth");
-        DateOB.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                DateOBFocusGained(evt);
-            }
-        });
-        DateOB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DateOBActionPerformed(evt);
-            }
-        });
-
         HomeA.setText("Home Address");
         HomeA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -134,72 +133,169 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        Gender.setText("Gender");
-        Gender.addFocusListener(new java.awt.event.FocusAdapter() {
+        jLabel2.setText("First Name");
+
+        jLabel3.setText("Last Name");
+
+        jLabel4.setText("Gender");
+
+        jLabel5.setText("Phone Number");
+
+        jLabel6.setText("Email Address");
+
+        Date.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
+        Date.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                GenderFocusGained(evt);
+                DateFocusGained(evt);
             }
         });
+        Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DateActionPerformed(evt);
+            }
+        });
+
+        Year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
+        Year.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                YearFocusGained(evt);
+            }
+        });
+        Year.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YearActionPerformed(evt);
+            }
+        });
+
+        Month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
+        Month.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                MonthFocusGained(evt);
+            }
+        });
+        Month.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MonthActionPerformed(evt);
+            }
+        });
+
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Male", "Female" }));
         Gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GenderActionPerformed(evt);
             }
         });
 
+        jLabel7.setText("Year");
+
+        jLabel8.setText("Month");
+
+        jLabel9.setText("Date");
+
+        jLabel10.setText("Home Address");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jButton1))
+                        .addComponent(FirstN, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                                .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(PhoneN, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(EmailA, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(HomeA, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LastN, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(58, 58, 58)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(20, 20, 20))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(HomeA, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DateOB, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FirstN, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EmailA, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PhoneN, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LastN, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(81, 81, 81))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(113, 113, 113))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(229, 229, 229))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton2)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FirstN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LastN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(LastN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(PhoneN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PhoneN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(EmailA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(DateOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(HomeA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EmailA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HomeA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(14, 14, 14))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,10 +328,6 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstNActionPerformed
 
-    private void DateOBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateOBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DateOBActionPerformed
-
     private void HomeAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_HomeAActionPerformed
@@ -251,9 +343,7 @@ public class SignUp extends javax.swing.JFrame {
         if(LastN.getText().equals(""))LastN.setText("Last Name");
         if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
         if(EmailA.getText().equals(""))EmailA.setText("Email Address");
-        if(DateOB.getText().equals(""))DateOB.setText("Date of Birth");
         if(HomeA.getText().equals(""))HomeA.setText("Home Address");
-        if(Gender.getText().equals(""))Gender.setText("Gender");
 
     }//GEN-LAST:event_FirstNFocusGained
 
@@ -262,23 +352,15 @@ public class SignUp extends javax.swing.JFrame {
         if(FirstN.getText().equals(""))FirstN.setText("First Name");
         if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
         if(EmailA.getText().equals(""))EmailA.setText("Email Address");
-        if(DateOB.getText().equals(""))DateOB.setText("Date of Birth");
         if(HomeA.getText().equals(""))HomeA.setText("Home Address");
-        if(Gender.getText().equals(""))Gender.setText("Gender");
     }//GEN-LAST:event_LastNFocusGained
-
-    private void GenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GenderActionPerformed
 
     private void PhoneNFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PhoneNFocusGained
         if(PhoneN.getText().equals("Phone Number"))PhoneN.setText("");
         if(FirstN.getText().equals(""))FirstN.setText("First Name");
         if(LastN.getText().equals(""))LastN.setText("Last Name");
         if(EmailA.getText().equals(""))EmailA.setText("Email Address");
-        if(DateOB.getText().equals(""))DateOB.setText("Date of Birth");
         if(HomeA.getText().equals(""))HomeA.setText("Home Address");
-        if(Gender.getText().equals(""))Gender.setText("Gender");
 
     }//GEN-LAST:event_PhoneNFocusGained
 
@@ -287,60 +369,195 @@ public class SignUp extends javax.swing.JFrame {
         if(FirstN.getText().equals(""))FirstN.setText("First Name");
         if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
         if(LastN.getText().equals(""))LastN.setText("Last Name");
-        if(DateOB.getText().equals(""))DateOB.setText("Date of Birth");
         if(HomeA.getText().equals(""))HomeA.setText("Home Address");
-        if(Gender.getText().equals(""))Gender.setText("Gender");
 
     }//GEN-LAST:event_EmailAFocusGained
-
-    private void DateOBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateOBFocusGained
-        if(DateOB.getText().equals("Date of Birth"))DateOB.setText("");
-        if(FirstN.getText().equals(""))FirstN.setText("First Name");
-        if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
-        if(EmailA.getText().equals(""))EmailA.setText("Email Address");
-        if(LastN.getText().equals(""))LastN.setText("Last Name");
-        if(HomeA.getText().equals(""))HomeA.setText("Home Address");
-        if(Gender.getText().equals(""))Gender.setText("Gender");
-
-    }//GEN-LAST:event_DateOBFocusGained
 
     private void HomeAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HomeAFocusGained
         if(HomeA.getText().equals("Home Address"))HomeA.setText("");
         if(FirstN.getText().equals(""))FirstN.setText("First Name");
         if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
         if(EmailA.getText().equals(""))EmailA.setText("Email Address");
-        if(DateOB.getText().equals(""))DateOB.setText("Date of Birth");
         if(LastN.getText().equals(""))LastN.setText("Last Name");
-        if(Gender.getText().equals(""))Gender.setText("Gender");
-
     }//GEN-LAST:event_HomeAFocusGained
 
-    private void GenderFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_GenderFocusGained
-        if(Gender.getText().equals("Gender"))Gender.setText("");
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        boolean valid = true;
+        
+        String phone = PhoneN.getText().trim().replaceAll(" ", "");
+        if (phone.length() != 10)
+        {
+            valid = false;
+        }
+        else
+        {
+            int[] num = {0,1,2,3,4,5,6,7,8,9};
+        }
+        if (FirstN.getText().equals("First Name") || FirstN.getText().equals("") || 
+            LastN.getText().equals("Last Name") || LastN.getText().equals("") || 
+            Gender.getSelectedItem().equals("Select") || Date.getSelectedItem().equals("Select") ||
+            Month.getSelectedItem().equals("Select") || Year.getSelectedItem().equals("Select"))
+        {
+            if ((FirstN.getText().equals("First Name") || FirstN.getText().equals("") || 
+                LastN.getText().equals("Last Name") || LastN.getText().equals("")))
+            {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            }
+            else if (Gender.getSelectedItem().equals("Select"))
+            {
+                JOptionPane.showMessageDialog(null, "Please select your gender");
+            }
+            else if (Date.getSelectedItem().equals("Select") ||
+            Month.getSelectedItem().equals("Select") || Year.getSelectedItem().equals("Select")) 
+            {
+                JOptionPane.showMessageDialog(null, "Please select your date of birth");
+            }
+            
+        }
+        else
+        {
+            FirstName = FirstN.getText();
+            LastName = LastN.getText();
+            PhoneNumber = PhoneN.getText();
+            EmailAddress = EmailA.getText();
+            DateOfBirth = Year.getSelectedItem().toString() + "/" + Month.getSelectedItem().toString() + "/" + Date.getSelectedItem().toString();
+            HomeAddress = HomeA.getText();
+            Gend = Gender.getSelectedItem().toString();
+            UserName = FirstName.trim().substring(0,1).toLowerCase() + LastName.trim().toLowerCase() + "@guest.com";
+            int count = 1;
+            boolean found = true;
+            while (found)
+            {
+                found = false;
+
+                for (int i = 0;i < LoginStartupUI.matrix.length;i++)
+                {
+                    if (UserName.equals(LoginStartupUI.matrix[i][0]))
+                    {
+                        UserName = FirstName.trim().substring(0,1).toLowerCase() + LastName.trim().toLowerCase() + count + "@guest.com";
+                        count++;
+                        found = true;
+                    }
+
+                }
+            }
+
+
+            SignUp2 nextPage = new SignUp2();
+            nextPage.Username.setText(UserName);
+            nextPage.show();
+
+            dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateActionPerformed
+
+    private void YearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YearActionPerformed
+
+    private void MonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MonthActionPerformed
+
+    private void GenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GenderActionPerformed
+
+    private void YearFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_YearFocusGained
         if(FirstN.getText().equals(""))FirstN.setText("First Name");
+        if(LastN.getText().equals(""))LastN.setText("Last Name");
         if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
         if(EmailA.getText().equals(""))EmailA.setText("Email Address");
-        if(DateOB.getText().equals(""))DateOB.setText("Date of Birth");
         if(HomeA.getText().equals(""))HomeA.setText("Home Address");
-        if(LastN.getText().equals(""))LastN.setText("Last Name");
-
-    }//GEN-LAST:event_GenderFocusGained
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FirstName = FirstN.getText();
-        LastName = LastN.getText();
-        PhoneNumber = PhoneN.getText();
-        EmailAddress = EmailA.getText();
-        DateOfBirth = DateOB.getText();
-        HomeAddress = HomeA.getText();
-        Gend = Gender.getText();
-        UserName = FirstName.substring(0,1) + LastName + "@guest.com";
-        SignUp2 nextPage = new SignUp2();
-        nextPage.Username.setText(UserName);
-        nextPage.show();
         
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Year.removeAllItems();
+        
+        for (int i = 1900; i <= 2022; i++)
+        {       
+            Year.addItem(i + "");
+        }
+    }//GEN-LAST:event_YearFocusGained
+
+    private void MonthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MonthFocusGained
+        if(FirstN.getText().equals(""))FirstN.setText("First Name");
+        if(LastN.getText().equals(""))LastN.setText("Last Name");
+        if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
+        if(EmailA.getText().equals(""))EmailA.setText("Email Address");
+        if(HomeA.getText().equals(""))HomeA.setText("Home Address");
+        
+        if (Year.getSelectedItem().equals("Select"))
+        {
+            Month.removeAllItems();
+            Month.addItem("Select");
+        }
+        else
+        {
+            Month.removeAllItems();
+            for (int i = 1; i <= 12; i++)
+            {
+                Month.addItem(i+"");
+            }
+        }
+    }//GEN-LAST:event_MonthFocusGained
+
+    private void DateFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateFocusGained
+        if(FirstN.getText().equals(""))FirstN.setText("First Name");
+        if(LastN.getText().equals(""))LastN.setText("Last Name");
+        if(PhoneN.getText().equals(""))PhoneN.setText("Phone Number");
+        if(EmailA.getText().equals(""))EmailA.setText("Email Address");
+        if(HomeA.getText().equals(""))HomeA.setText("Home Address");
+        
+        if (Month.getSelectedItem().equals("Select"))
+        {
+            Date.removeAllItems();
+            Date.addItem("Select");
+        }
+        else if (Month.getSelectedItem().equals("1") || Month.getSelectedItem().equals("3") ||
+            Month.getSelectedItem().equals("5") || Month.getSelectedItem().equals("7") ||
+            Month.getSelectedItem().equals("8") || Month.getSelectedItem().equals("10") ||
+            Month.getSelectedItem().equals("12"))
+        {
+            Date.removeAllItems();
+            
+            for (int i = 1; i <= 31; i++)
+            {
+                Date.addItem(i + "");
+            }
+        }
+        else if (Month.getSelectedItem().equals("2"))
+        {
+            Date.removeAllItems();
+            
+            if (Year.getSelectedItem().equals("2024"))
+            {
+                for (int i = 1; i <= 29; i++)
+                {
+                    Date.addItem(i + "");
+                }
+            }
+            else
+            {
+                for (int i = 1; i <= 28; i++)
+                {
+                    Date.addItem(i + "");
+                }
+            }       
+        }
+        else
+        {
+            Date.removeAllItems();
+            
+            for (int i = 1; i <= 30; i++)
+            {
+                Date.addItem(i + "");
+            }
+        
+        }
+    }//GEN-LAST:event_DateFocusGained
 
     /**
      * @param args the command line arguments
@@ -388,16 +605,27 @@ public class SignUp extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField DateOB;
+    private javax.swing.JComboBox<String> Date;
     public javax.swing.JTextField EmailA;
     public javax.swing.JTextField FirstN;
-    public javax.swing.JTextField Gender;
+    private javax.swing.JComboBox<String> Gender;
     public javax.swing.JTextField HomeA;
     public javax.swing.JTextField LastN;
+    private javax.swing.JComboBox<String> Month;
     public javax.swing.JTextField PhoneN;
+    private javax.swing.JComboBox<String> Year;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
