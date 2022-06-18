@@ -235,19 +235,33 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 String usernamex = scan.next();
                 String passwordx = scan.next();
-                for(int i = 0; i < 12; i++)scan.next();
-
+                
                 if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
                 {
                     found = true;
+                }
+                else
+                {
+                    for(int i = 0; i < 12; i++)scan.next();
                 }
             }
             if(found && username.contains("@guest.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
                 PatientStartupUI nextPage = new PatientStartupUI();
+                nextPage.FName.setText(scan.next());
+                nextPage.LName.setText(scan.next());
+                nextPage.PhoneN.setText(scan.next());
+                nextPage.Email.setText(scan.next());
+                nextPage.DateOB.setText(scan.next());
+                nextPage.HomeAddress.setText(scan.next());
+                nextPage.Sex.setText(scan.next());
+            
                 nextPage.show();
-
+                for (int i = 0; i < 5;i++)
+                {
+                    scan.next();
+                }
                 dispose();
             }
 
