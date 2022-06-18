@@ -392,7 +392,7 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
 
-                pw.println(FirstName.getText()+','+LastName.getText()+','+PhoneNumber.getText()+','+Email.getText()+','+Date.getSelectedItem()+'/'+Month.getSelectedItem()+'/'+Year.getSelectedItem()+','+
+                pw.println(FirstName.getText()+','+LastName.getText()+','+PhoneNumber.getText()+','+Email.getText()+','+Date.getSelectedItem()+','+Month.getSelectedItem()+','+Year.getSelectedItem()+','+
                            Doctor.getSelectedItem());
                 pw.flush();
                 pw.close();

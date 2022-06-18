@@ -27,7 +27,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
             while((line = br.readLine()) != null)
             {
                 String[] user = line.split(",");
-                if(user[0].equals(login.Username.getText()))
+                if(user[0].trim().equals(login.Username.getText().trim()))
                 {
                     FName.setText(user[2]);
                     LName.setText(user[3].trim());

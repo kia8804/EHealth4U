@@ -525,13 +525,15 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                 else if(Month.getSelectedItem().equals("December")) dateValue+=360;
                     
                 dateValue+=Date.getSelectedIndex();
+                
+                dateValue+=(Year.getSelectedIndex()+1)*1000;
                     
                 pw.println(dateValue+","+FirstName.getText()+","+LastName.getText()+","+PhoneNumber.getText()+","+Email.getText()+","+
                     Doctor.getSelectedItem()+","+Date.getSelectedItem()+","+Month.getSelectedItem()+","+Year.getSelectedItem());
                 pw.flush();
                 pw.close();
 
-                JOptionPane.showMessageDialog(null, "record saved");
+                JOptionPane.showMessageDialog(null, "Appointment Created");
 
             }
             catch(Exception e)

@@ -5,9 +5,14 @@
 package hospitalmanager.Patient;
 
 import hospitalmanager.FrontDesk.*;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +26,13 @@ public class RequestAppointmentChangeUI extends javax.swing.JFrame {
      */
     public RequestAppointmentChangeUI() {
         initComponents();
+        
+        PatientStartupUI previousPage = new PatientStartupUI();
+        
+        FirstN.setText(previousPage.FName.getText());
+        LastN.setText(previousPage.LName.getText());
+        PhoneN.setText(previousPage.PhoneN.getText());
+        EmailA.setText(previousPage.HomeAddress.getText());
     }
 
     /**
@@ -300,51 +312,51 @@ public class RequestAppointmentChangeUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        //String filepath = "src\\hospitalmanager.Patient\\AppointmentRequests.csv";
-        
-        /*//if (FirstN.getText().equals("First Name") || FirstN.getText().equals("") || 
-        //    LastName.getText().equals("Last Name") || LastName.getText().equals("") || 
-        //    Doctor.getSelectedItem().equals("Select") || Date.getSelectedItem().equals("Select") ||
-        //    Month.getSelectedItem().equals("Select") || Year.getSelectedItem().equals("Select"))
-        //{
-            if ((FirstName.getText().equals("First Name") || FirstName.getText().equals("") || 
-                LastName.getText().equals("Last Name") || LastName.getText().equals("")) && 
-                Doctor.getSelectedItem().equals("Select"))
-            {
-                JOptionPane.showMessageDialog(null, "Please fill all the fields and select a doctor");
+        List<String[]> rowList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\AppointmentRequests.csv"))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                String[] lineItems = line.split(",");
+                rowList.add(lineItems);
             }
-            else if  (Doctor.getSelectedItem().equals("Select"))
-            {
-                JOptionPane.showMessageDialog(null, "Please select a doctor");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Please fill all the fields");
-            }
+            br.close();
         }
-        else
+        catch(Exception e){
+            // Handle any I/O problems
+        }
+        String[][] matrix = new String[rowList.size()][];
+        for (int i = 0; i < rowList.size(); i++) {
+            String[] row = rowList.get(i);
+            matrix[i] = row;
+        }
+
+        try
         {
-            try
-            {
-                FileWriter fw = new FileWriter(filepath, true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                PrintWriter pw = new PrintWriter(bw);
+            File file = new File("src\\hospitalmanager\\AppointmentRequests.csv");
+            FileWriter fw = new FileWriter(file);
+            PrintWriter pw = new PrintWriter(fw);
 
-                //pw.println(FirstName.getText()+','+LastName.getText()+','+Date.getSelectedItem()+','+
-                           //Doctor.getSelectedItem());
-                pw.flush();
-                pw.close();
-
-                JOptionPane.showMessageDialog(null, "record saved");
-
+            for (int i = 0; i < matrix.length; i++) {
+                for(int j = 0; j < matrix[i].length-1; j++)
+                {
+                    if(matrix[i][0].equals(FirstN.getText()) && matrix[i][1].equals(LastN.getText()))
+                    {
+                        matrix[i][4] = (String)Date.getSelectedItem();
+                        matrix[i][5] = (String)Month.getSelectedItem();
+                        matrix[i][6] = (String)Year.getSelectedItem();
+                        matrix[i][7] = (String)Doctor.getSelectedItem();
+                    }
+                    pw.append(matrix[i][j]+",");
+                }
+                pw.append(matrix[i][matrix[i].length-1]+"\n");
             }
-            catch(Exception e)
-            {
-
-            }
-            
+            pw.close();
         }
-        */
+        catch(Exception e)
+        {
+
+        }
+        JOptionPane.showMessageDialog(null, "Patient Diagnosis Updated");
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DoctorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DoctorFocusGained
@@ -486,38 +498,6 @@ public class RequestAppointmentChangeUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(RequestAppointmentChangeUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

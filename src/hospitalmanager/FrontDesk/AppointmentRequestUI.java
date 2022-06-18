@@ -35,7 +35,7 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
             {
                 String[] appointment = line.split(",");
                 DefaultTableModel tblModel = (DefaultTableModel)Requests.getModel();
-                appointment = new String[]{appointment[0],appointment[1],appointment[2], appointment[3], appointment[4], appointment[5]};
+                appointment = new String[]{appointment[1],appointment[2],appointment[3], appointment[4], appointment[6]+' '+appointment[5]+", "+appointment[7],appointment[8]};
                 tblModel.addRow(appointment);
             }
         }
@@ -61,6 +61,9 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
         PhoneNumber = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         EmailAddress = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -99,7 +102,6 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
             Requests.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        PhoneNumber.setText("Phone Number");
         PhoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 PhoneNumberFocusGained(evt);
@@ -118,24 +120,44 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
             }
         });
 
-        EmailAddress.setText("Email Address");
         EmailAddress.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 EmailAddressFocusGained(evt);
             }
         });
 
+        jButton2.setText("Return");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Phone Number");
+
+        jLabel2.setText("Email Address");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(EmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(EmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(117, 117, 117)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,12 +167,22 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(EmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)
+                        .addContainerGap(16, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,13 +207,9 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
     }//GEN-LAST:event_PhoneNumberActionPerformed
 
     private void PhoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PhoneNumberFocusGained
-        if(PhoneNumber.getText().equals("Phone Number"))PhoneNumber.setText("");
-        if(EmailAddress.getText().equals(""))EmailAddress.setText("Email Address");
     }//GEN-LAST:event_PhoneNumberFocusGained
 
     private void EmailAddressFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailAddressFocusGained
-        if(EmailAddress.getText().equals("Email Address"))EmailAddress.setText("");
-        if(PhoneNumber.getText().equals(""))PhoneNumber.setText("Phone Number");
     }//GEN-LAST:event_EmailAddressFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -196,9 +224,8 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
             while((line = br.readLine()) != null)
             {
                 String[] appointment = line.split(",");
-                if(appointment[2].equals(PhoneNumber.getText()) && appointment[3].equals(EmailAddress.getText()))
+                if(appointment[3].equals(PhoneNumber.getText()) && appointment[4].equals(EmailAddress.getText()))
                 {
-                    appointment = new String[]{appointment[0],appointment[1],appointment[2], appointment[3], appointment[4], appointment[5]};
                     String filepath2 = "src\\hospitalmanager\\Appointments.csv";
                     try
                     {
@@ -206,7 +233,28 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
                         BufferedWriter bw = new BufferedWriter(fw);
                         PrintWriter pw = new PrintWriter(bw);
 
-                        pw.println("na"+appointment[0]+','+appointment[1]+','+appointment[2]+','+appointment[3]+','+appointment[4]+','+appointment[5]);
+                        int dateValue = 0;
+                        
+                        if(appointment[6].equals("January"))dateValue+=30;
+                        else if(appointment[6].equals("February"))dateValue+=60;
+                        else if(appointment[6].equals("March"))dateValue+=90;
+                        else if(appointment[6].equals("April"))dateValue+=120;
+                        else if(appointment[6].equals("May"))dateValue+=150;
+                        else if(appointment[6].equals("June"))dateValue+=180;
+                        else if(appointment[6].equals("July"))dateValue+=210;
+                        else if(appointment[6].equals("August"))dateValue+=240;
+                        else if(appointment[6].equals("September"))dateValue+=270;
+                        else if(appointment[6].equals("October"))dateValue+=300;
+                        else if(appointment[6].equals("November"))dateValue+=330;
+                        else if(appointment[6].equals("December"))dateValue+=360;
+                        
+                        //dateValue+=Integer.valueOf(appointment[4]);
+                        
+                        if(appointment[7].equals("2022"))dateValue+=1000;
+                        else if(appointment[7].equals("2023"))dateValue+=2000;
+                        else if(appointment[7].equals("2024"))dateValue+=3000;
+                        
+                        pw.println(dateValue+","+appointment[1]+','+appointment[2]+','+appointment[3]+','+appointment[4]+','+appointment[8]+','+appointment[5]+','+appointment[6]+','+appointment[7]);
                         pw.flush();
                         pw.close();
 
@@ -232,6 +280,10 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,6 +325,9 @@ public class AppointmentRequestUI extends javax.swing.JFrame {
     private javax.swing.JTextField PhoneNumber;
     private javax.swing.JTable Requests;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
