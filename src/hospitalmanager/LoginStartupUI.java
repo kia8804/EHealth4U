@@ -252,7 +252,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 nextPage.FName.setText(scan.next());
                 nextPage.LName.setText(scan.next());
                 nextPage.PhoneN.setText(scan.next());
-                nextPage.Email.setText(scan.next());
+                nextPage.EmailA.setText(scan.next());
                 nextPage.DateOB.setText(scan.next());
                 nextPage.HomeAddress.setText(scan.next());
                 nextPage.Sex.setText(scan.next());
@@ -263,6 +263,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
                     scan.next();
                 }
                 dispose();
+                scan.reset();
             }
 
             if(found && username.contains("@doctor.com"))
@@ -433,7 +434,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private void PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
         {
-            String username = Username.getText();
+            /*String username = Username.getText();
             String password = Password.getText();
             boolean found = false;
 
@@ -494,13 +495,90 @@ public class LoginStartupUI extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null, "An error occured! "+e);
             }
+        */
+            String username = Username.getText();
+            String password = Password.getText();
+            boolean found = false;
+
+            try
+            {
+                File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
+                Scanner scan = new Scanner(filex);
+                scan.useDelimiter("[,\n]");
+
+                while(scan.hasNext() && !found)
+                {
+                    String usernamex = scan.next();
+                    String passwordx = scan.next();
+
+                    if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
+                    {
+                        found = true;
+                    }
+                    else
+                    {
+                        for(int i = 0; i < 12; i++)scan.next();
+                    }
+                }
+                if(found && username.contains("@guest.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
+                    PatientStartupUI nextPage = new PatientStartupUI();
+                    nextPage.FName.setText(scan.next());
+                    nextPage.LName.setText(scan.next());
+                    nextPage.PhoneN.setText(scan.next());
+                    nextPage.EmailA.setText(scan.next());
+                    nextPage.DateOB.setText(scan.next());
+                    nextPage.HomeAddress.setText(scan.next());
+                    nextPage.Sex.setText(scan.next());
+
+                    nextPage.show();
+                    for (int i = 0; i < 5;i++)
+                    {
+                        scan.next();
+                    }
+                    dispose();
+                    scan.reset();
+                }
+
+                if(found && username.contains("@doctor.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                    DoctorStartUpUI nextPage = new DoctorStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(found && username.contains("@front.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
+                    FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(!found)
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+                    Username.setText("Username");
+                    Password.setText("Password");
+                }
+
+            }
+
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "An error occured! "+e);
+            }
         }
     }//GEN-LAST:event_PasswordKeyPressed
 
     private void UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
         {
-            String username = Username.getText();
+            /*String username = Username.getText();
             String password = Password.getText();
             boolean found = false;
 
@@ -528,6 +606,82 @@ public class LoginStartupUI extends javax.swing.JFrame {
                     nextPage.show();
 
                     dispose();
+                }
+
+                if(found && username.contains("@doctor.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                    DoctorStartUpUI nextPage = new DoctorStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(found && username.contains("@front.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
+                    FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
+                    nextPage.show();
+
+                    dispose();
+                }
+
+                if(!found)
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+                    Username.setText("Username");
+                    Password.setText("Password");
+                }
+
+            }
+
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "An error occured! "+e);
+            }*/
+            String username = Username.getText();
+            String password = Password.getText();
+            boolean found = false;
+
+            try
+            {
+                File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
+                Scanner scan = new Scanner(filex);
+                scan.useDelimiter("[,\n]");
+
+                while(scan.hasNext() && !found)
+                {
+                    String usernamex = scan.next();
+                    String passwordx = scan.next();
+
+                    if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
+                    {
+                        found = true;
+                    }
+                    else
+                    {
+                        for(int i = 0; i < 12; i++)scan.next();
+                    }
+                }
+                if(found && username.contains("@guest.com"))
+                {
+                    JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
+                    PatientStartupUI nextPage = new PatientStartupUI();
+                    nextPage.FName.setText(scan.next());
+                    nextPage.LName.setText(scan.next());
+                    nextPage.PhoneN.setText(scan.next());
+                    nextPage.EmailA.setText(scan.next());
+                    nextPage.DateOB.setText(scan.next());
+                    nextPage.HomeAddress.setText(scan.next());
+                    nextPage.Sex.setText(scan.next());
+
+                    nextPage.show();
+                    for (int i = 0; i < 5;i++)
+                    {
+                        scan.next();
+                    }
+                    dispose();
+                    scan.reset();
                 }
 
                 if(found && username.contains("@doctor.com"))

@@ -36,8 +36,6 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        FirstName = new javax.swing.JTextField();
-        LastName = new javax.swing.JTextField();
         Doctor = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         Save = new javax.swing.JButton();
@@ -45,14 +43,16 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        PhoneNumber = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        Email = new javax.swing.JTextField();
         Date = new javax.swing.JComboBox<>();
         Month = new javax.swing.JComboBox<>();
         Year = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        FirstName = new javax.swing.JLabel();
+        LastName = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
+        Email = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add patient");
@@ -76,34 +76,6 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Doctor");
-
-        FirstName.setBackground(new java.awt.Color(36, 38, 39));
-        FirstName.setForeground(new java.awt.Color(204, 204, 204));
-        FirstName.setText("First Name");
-        FirstName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                FirstNameFocusGained(evt);
-            }
-        });
-        FirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstNameActionPerformed(evt);
-            }
-        });
-
-        LastName.setBackground(new java.awt.Color(36, 38, 39));
-        LastName.setForeground(new java.awt.Color(204, 204, 204));
-        LastName.setText("Last Name");
-        LastName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                LastNameFocusGained(evt);
-            }
-        });
-        LastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LastNameActionPerformed(evt);
-            }
-        });
 
         Doctor.setBackground(new java.awt.Color(0, 0, 0));
         Doctor.setForeground(new java.awt.Color(204, 204, 204));
@@ -165,37 +137,9 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Phone Number");
 
-        PhoneNumber.setBackground(new java.awt.Color(36, 38, 39));
-        PhoneNumber.setForeground(new java.awt.Color(204, 204, 204));
-        PhoneNumber.setText("Phone Number");
-        PhoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                PhoneNumberFocusGained(evt);
-            }
-        });
-        PhoneNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PhoneNumberActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Email");
-
-        Email.setBackground(new java.awt.Color(36, 38, 39));
-        Email.setForeground(new java.awt.Color(204, 204, 204));
-        Email.setText("Email");
-        Email.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                EmailFocusGained(evt);
-            }
-        });
-        Email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailActionPerformed(evt);
-            }
-        });
 
         Date.setBackground(new java.awt.Color(0, 0, 0));
         Date.setForeground(new java.awt.Color(204, 204, 204));
@@ -247,22 +191,49 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Date");
 
+        FirstName.setBackground(new java.awt.Color(36, 38, 39));
+        FirstName.setForeground(new java.awt.Color(204, 204, 204));
+        FirstName.setText("First Name");
+        FirstName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        LastName.setBackground(new java.awt.Color(36, 38, 39));
+        LastName.setForeground(new java.awt.Color(204, 204, 204));
+        LastName.setText("Last Name");
+        LastName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        PhoneNumber.setBackground(new java.awt.Color(36, 38, 39));
+        PhoneNumber.setForeground(new java.awt.Color(204, 204, 204));
+        PhoneNumber.setText("Phone Number");
+        PhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Email.setBackground(new java.awt.Color(36, 38, 39));
+        Email.setForeground(new java.awt.Color(204, 204, 204));
+        Email.setText("Email");
+        Email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(Save)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(128, 128, 128))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                     .addComponent(jLabel3)
-                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                    .addComponent(LastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
@@ -272,14 +243,7 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
                     .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12))
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(Save)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(128, 128, 128))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,44 +255,44 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save)
                     .addComponent(jButton1))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,28 +302,6 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void FirstNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FirstNameFocusGained
-        if(FirstName.getText().equals("First Name"))FirstName.setText("");
-        if(LastName.getText().length()==0)LastName.setText("Last Name");
-        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
-        if(Email.getText().length()==0) Email.setText("Email");
-    }//GEN-LAST:event_FirstNameFocusGained
-
-    private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FirstNameActionPerformed
-
-    private void LastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LastNameFocusGained
-        if(LastName.getText().equals("Last Name"))LastName.setText("");
-        if(FirstName.getText().length()==0)FirstName.setText("First Name");
-        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");
-        if(Email.getText().length()==0) Email.setText("Email");
-    }//GEN-LAST:event_LastNameFocusGained
-
-    private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LastNameActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         String filepath = "src\\hospitalmanager\\AppointmentRequests.csv";
@@ -419,28 +361,6 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void PhoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PhoneNumberFocusGained
-        if(PhoneNumber.getText().equals("Phone Number")) PhoneNumber.setText("");
-        if(FirstName.getText().length()==0)FirstName.setText("First Name");
-        if(LastName.getText().length()==0) LastName.setText("Last Name");
-        if(Email.getText().length()==0) Email.setText("Email");    
-    }//GEN-LAST:event_PhoneNumberFocusGained
-
-    private void PhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PhoneNumberActionPerformed
-
-    private void EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusGained
-        if(Email.getText().equals("Email")) Email.setText("");
-        if(FirstName.getText().length()==0)FirstName.setText("First Name");
-        if(LastName.getText().length()==0) LastName.setText("Last Name");
-        if(PhoneNumber.getText().length()==0) PhoneNumber.setText("Phone Number");    
-    }//GEN-LAST:event_EmailFocusGained
-
-    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmailActionPerformed
 
     private void DateFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateFocusGained
         if(FirstName.getText().length()==0)FirstName.setText("First Name");
@@ -598,11 +518,11 @@ public class RequestAppointmentUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Date;
     private javax.swing.JComboBox<String> Doctor;
-    private javax.swing.JTextField Email;
-    private javax.swing.JTextField FirstName;
-    private javax.swing.JTextField LastName;
+    public javax.swing.JLabel Email;
+    public javax.swing.JLabel FirstName;
+    public javax.swing.JLabel LastName;
     private javax.swing.JComboBox<String> Month;
-    private javax.swing.JTextField PhoneNumber;
+    public javax.swing.JLabel PhoneNumber;
     private javax.swing.JButton Save;
     public javax.swing.JComboBox<String> Year;
     private javax.swing.JButton jButton1;

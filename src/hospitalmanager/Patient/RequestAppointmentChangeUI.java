@@ -203,15 +203,19 @@ public class RequestAppointmentChangeUI extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Date");
 
+        FirstN.setForeground(new java.awt.Color(204, 204, 204));
         FirstN.setText("First Name");
         FirstN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        LastN.setForeground(new java.awt.Color(204, 204, 204));
         LastN.setText("Last Name");
         LastN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        PhoneN.setForeground(new java.awt.Color(204, 204, 204));
         PhoneN.setText("Phone Number");
         PhoneN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        EmailA.setForeground(new java.awt.Color(204, 204, 204));
         EmailA.setText("Email");
         EmailA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -510,11 +514,11 @@ public class RequestAppointmentChangeUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Date;
     private javax.swing.JComboBox<String> Doctor;
-    private javax.swing.JLabel EmailA;
-    private javax.swing.JLabel FirstN;
-    private javax.swing.JLabel LastN;
+    public javax.swing.JLabel EmailA;
+    public javax.swing.JLabel FirstN;
+    public javax.swing.JLabel LastN;
     private javax.swing.JComboBox<String> Month;
-    private javax.swing.JLabel PhoneN;
+    public javax.swing.JLabel PhoneN;
     private javax.swing.JButton Save;
     public javax.swing.JComboBox<String> Year;
     private javax.swing.JButton jButton1;
