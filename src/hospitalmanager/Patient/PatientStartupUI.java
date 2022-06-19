@@ -34,7 +34,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
                     DateOB.setText(user[6].trim());
                     Sex.setText(user[8].trim());
                     PhoneN.setText(user[4].trim());
-                    Email.setText(user[5].trim());
+                    EmailA.setText(user[5].trim());
                     HomeAddress.setText(user[7].trim());
                 }
             }
@@ -84,7 +84,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
         DateOB = new javax.swing.JLabel();
         Sex = new javax.swing.JLabel();
         PhoneN = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
+        EmailA = new javax.swing.JLabel();
         HomeAddress = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -198,9 +198,9 @@ public class PatientStartupUI extends javax.swing.JFrame {
         PhoneN.setText("<Phone Number>");
         PhoneN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Email.setForeground(new java.awt.Color(204, 204, 204));
-        Email.setText("<E-Mail>");
-        Email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EmailA.setForeground(new java.awt.Color(204, 204, 204));
+        EmailA.setText("<E-Mail>");
+        EmailA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         HomeAddress.setForeground(new java.awt.Color(204, 204, 204));
         HomeAddress.setText("<Home Address>");
@@ -217,7 +217,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
                     .addComponent(DateOB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Sex, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PhoneN, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                    .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EmailA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(FName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(HomeAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -236,7 +236,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(PhoneN)
                 .addGap(31, 31, 31)
-                .addComponent(Email)
+                .addComponent(EmailA)
                 .addGap(27, 27, 27)
                 .addComponent(HomeAddress)
                 .addContainerGap(39, Short.MAX_VALUE))
@@ -589,7 +589,13 @@ public class PatientStartupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
         RequestAppointmentUI nextPage = new RequestAppointmentUI();
+        
+        nextPage.FirstName.setText(FName.getText());
+        nextPage.LastName.setText(LName.getText());
+        nextPage.PhoneNumber.setText(PhoneN.getText());
+        nextPage.Email.setText(EmailA.getText());
         nextPage.show();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -602,6 +608,11 @@ public class PatientStartupUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         RequestAppointmentChangeUI nextPage = new RequestAppointmentChangeUI();
+        
+        nextPage.FirstN.setText(FName.getText());
+        nextPage.LastN.setText(LName.getText());
+        nextPage.PhoneN.setText(PhoneN.getText());
+        nextPage.EmailA.setText(EmailA.getText());
         nextPage.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -643,7 +654,7 @@ public class PatientStartupUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel DateOB;
-    public javax.swing.JLabel Email;
+    public javax.swing.JLabel EmailA;
     public javax.swing.JLabel FName;
     public javax.swing.JLabel HomeAddress;
     public javax.swing.JLabel LName;

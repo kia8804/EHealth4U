@@ -35,7 +35,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -58,19 +58,27 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                  <Component id="Save" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="126" max="32767" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="FirstName" pref="201" max="32767" attributes="0"/>
                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="FirstName" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="LastName" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="PhoneNumber" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="Email" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
+                      <Component id="LastName" max="32767" attributes="0"/>
+                      <Component id="PhoneNumber" max="32767" attributes="0"/>
+                      <Component id="Email" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -81,15 +89,7 @@
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
-              </Group>
-              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
-                  <Component id="Save" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,8 +104,8 @@
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="FirstName" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="Year" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="FirstName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -114,8 +114,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LastName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Month" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LastName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -123,26 +123,26 @@
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Date" min="-2" max="-2" attributes="0"/>
-                      <Component id="PhoneNumber" pref="28" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Date" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PhoneNumber" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Email" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Doctor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Email" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Save" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -180,36 +180,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Doctor"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="FirstName">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="27" green="26" red="24" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="First Name"/>
-          </Properties>
-          <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FirstNameFocusGained"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FirstNameActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="LastName">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="27" green="26" red="24" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Last Name"/>
-          </Properties>
-          <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="LastNameFocusGained"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="Doctor">
           <Properties>
@@ -331,21 +301,6 @@
             <Property name="text" type="java.lang.String" value="Phone Number"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="PhoneNumber">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="27" green="26" red="24" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Phone Number"/>
-          </Properties>
-          <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="PhoneNumberFocusGained"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PhoneNumberActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -356,21 +311,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="Email">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="27" green="26" red="24" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Email"/>
-          </Properties>
-          <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EmailFocusGained"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="Date">
           <Properties>
@@ -478,6 +418,82 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Date"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="FirstName">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="27" green="26" red="24" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="First Name"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LastName">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="27" green="26" red="24" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Last Name"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="PhoneNumber">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="27" green="26" red="24" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Phone Number"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Email">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="27" green="26" red="24" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Email"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
