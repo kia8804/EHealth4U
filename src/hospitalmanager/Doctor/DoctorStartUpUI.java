@@ -28,7 +28,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     public DoctorStartUpUI() {
         initComponents();
 
-        switch (LoginStartupUI.doc) {
+        /*switch (LoginStartupUI.doc) {
             case 0:
                 DrStartup.setText("Dr. Mirkamandari (Kiarash)");
                 break;
@@ -41,7 +41,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
             default:
                 DrStartup.setText("Dr. Kariyawasam (Disen)");
                 break;
-        }
+        }*/
         
     }
 

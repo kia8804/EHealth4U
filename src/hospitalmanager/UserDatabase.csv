@@ -1,8 +1,8 @@
 Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender,Availability,Status,Security Question 1,Security Question 2,Security Question 3
-user1@guest.com,1234,Jim,Tim,5199879876,jimthedudu@gmail.com,na,na,na,na,na,food,name,sport
-user2@guest.com,1234,Jim,Kim,IDK,kiamirk,Some day in 2004,Somewhere in Guelph,Male,na,na,food,name,sport
-mirkamandari@doctor.com,1234,Kiarash,Mirkamandari,5191231234,mirkamandarikiarash@gmail.com,01/01/2004,Canada,Male,Available,na,food,name,sport
-bui@doctor.com,1234,Duy,Bui,na,na,na,na,na,Available,na,food,name,sport
-kariyawasam@doctor.com,1234,Disen,Kariyawasam,na,na,na,na,na,Available,na,food,name,sport
-lewitsky@doctor.com,1234,Jay,Lewitsky,na,na,na,na,na,Available,na,food,name,sport
-user3@front.com,1234,Kim,Lin,na,kiamirk,na,na,na,na,na,food,name,sport
+jtim@guest.com,1234,Jim,Tim,519-987-9876,jimthedudu@gmail.com,1/1/1900,Canada,Male,na,na,donuts,Blue,Basketball
+hmaguire@guest.com,1234,Harry,Maguire,519-987-6543,harrym@gmail.com,1/1/1900,Canada,Male,na,na,english breakfast,tea,Red,Soccer
+mirkamandari@doctor.com,1234,Kiarash,Mirkamandari,519-123-1234,mirkia@gmail.com,01/01/1900,Canada,Male,Available,na,chicken,Yellow,Soccer
+bui@doctor.com,1234,Duy,Bui,519-831-4567,duybui@gmail.com,1/1/1900,Canada,Male,Available,na,coffee,Blue,Tennis
+kariyawasam@doctor.com,1234,Disen,Kariyawasam,344-323-4212,disenkari@gmail.com,1/1/1900,Canada,Male,Available,na,coffee,Orange,Volleyball
+lewitsky@doctor.com,1234,Jay,Lewitsky,654-655-4534,jlewitsky@gmail.com,1/1/1900,Canada,Male,Available,na,pie,Yellow,Polo
+kaune@front.com,1234,Richard,Kaune,345-236-7642,rkaune@gmail.com,1/1/1900,Canada,Male,na,na,pizza,Red,Rugby

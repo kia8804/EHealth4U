@@ -306,7 +306,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String username = (String)JOptionPane.showInputDialog(this, "Username","Account Verification", JOptionPane.PLAIN_MESSAGE);
         int rNum = ((int) (Math.random()*(3 - 0)));
-        String[] questions = new String[] {"What is your favorite food?","What is your mother's maiden name?","What is your favorite sport?"};
+        String[] questions = new String[] {"What is your favorite food?","What's your favourite color?","What is your favorite sport?"};
         String q = questions[rNum];
         String ans;
         
