@@ -585,7 +585,17 @@ public class PatientStartupUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        InformationUpdate nextPage = new InformationUpdate();
+        
+        nextPage.FirstName.setText(FName.getText());
+        nextPage.LastName.setText(LName.getText());
+        nextPage.DOB.setText(DateOB.getText());
+        nextPage.Gender.setSelectedItem(Sex.getText());
+        nextPage.PhoneNumber.setText(PhoneN.getText());
+        nextPage.HomeAddress.setText(HomeAddress.getText());
+        nextPage.Email.setText(EmailA.getText());
+        
+        nextPage.show();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

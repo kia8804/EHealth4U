@@ -478,13 +478,13 @@ public class InformationUpdate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddPatient;
-    private javax.swing.JTextField DOB;
-    private javax.swing.JTextField Email;
-    private javax.swing.JTextField FirstName;
-    private javax.swing.JComboBox<String> Gender;
-    private javax.swing.JTextField HomeAddress;
-    private javax.swing.JTextField LastName;
-    private javax.swing.JTextField PhoneNumber;
+    public javax.swing.JTextField DOB;
+    public javax.swing.JTextField Email;
+    public javax.swing.JTextField FirstName;
+    public javax.swing.JComboBox<String> Gender;
+    public javax.swing.JTextField HomeAddress;
+    public javax.swing.JTextField LastName;
+    public javax.swing.JTextField PhoneNumber;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
