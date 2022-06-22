@@ -132,10 +132,10 @@ public class LoginStartupUI extends javax.swing.JFrame {
         Username.getAccessibleContext().setAccessibleName(" ");
         Username.getAccessibleContext().setAccessibleDescription("");
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel6.setText("              Insert Company Logo/Image Here");
-        jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 280, 150));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/Screenshot_1553.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 220, 150));
 
         jButton2.setBackground(new java.awt.Color(101, 170, 190));
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
