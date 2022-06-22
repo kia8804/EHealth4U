@@ -1,5 +1,8 @@
 Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender,Availability,Status,Security Question 1,Security Question 2,Security Question 3
 user1@guest.com,1234,Jim,Tim,na,na,na,na,na,na,na,food,name,sport
 user2@guest.com,1234,Jim,Kim,IDK,kiamirk,Some day in 2004,Somewhere in Guelph,Male,na,na,food,name,sport
-user2@doctor.com,1234,Kiarash,Mirkamandari,na,na,na,na,na,Available,na,food,name,sport
+mirkamandari@doctor.com,1234,Kiarash,Mirkamandari,na,na,na,na,na,Available,na,food,name,sport
+bui@doctor.com,1234,Duy,Bui,na,na,na,na,na,Available,na,food,name,sport
+kariyawasam@doctor.com,1234,Disen,Kariyawasam,na,na,na,na,na,Available,na,food,name,sport
+lewitsky@doctor.com,1234,Jay,Lewitsky,na,na,na,na,na,Available,na,food,name,sport
 user3@front.com,1234,Kim,Lin,na,kiamirk,na,na,na,na,na,food,name,sport

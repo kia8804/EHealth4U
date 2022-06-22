@@ -131,7 +131,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
 
         Doctor.setBackground(new java.awt.Color(0, 0, 0));
         Doctor.setForeground(new java.awt.Color(204, 204, 204));
-        Doctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Dr. Handsome boizzz", "Dr. Kiarash Mirkamandari" }));
+        Doctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Dr. Duy Bui", "Dr. Jay Lewitsky", "Dr. Kiarash Mirkamandari", "Dr. Disen Kariyawasam " }));
         Doctor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 DoctorFocusGained(evt);
@@ -528,12 +528,15 @@ public class AddAppointmentUI extends javax.swing.JFrame {
                 
                 dateValue+=(Year.getSelectedIndex()+1)*1000;
                     
+                int docIndex = Doctor.getSelectedIndex();
+                
+                
                 pw.println(dateValue+","+FirstName.getText()+","+LastName.getText()+","+PhoneNumber.getText()+","+Email.getText()+","+
-                    Doctor.getSelectedItem()+","+Date.getSelectedItem()+","+Month.getSelectedItem()+","+Year.getSelectedItem());
+                    docIndex+","+Date.getSelectedItem()+","+Month.getSelectedItem()+","+Year.getSelectedItem());
                 pw.flush();
                 pw.close();
 
-                JOptionPane.showMessageDialog(null, "Appointment Created");
+                JOptionPane.showMessageDialog(null, "Appointment Added");
 
             }
             catch(Exception e)

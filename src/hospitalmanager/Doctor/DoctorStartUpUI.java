@@ -55,9 +55,9 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        comingPatient = new javax.swing.JLabel();
-        comingDate = new javax.swing.JLabel();
-        comingRoom = new javax.swing.JLabel();
+        Day = new javax.swing.JLabel();
+        Month = new javax.swing.JLabel();
+        PhoneN = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -144,11 +144,11 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
 
-        comingPatient.setText("Name");
+        Day.setText("Name");
 
-        comingDate.setText("Date");
+        Month.setText("Date");
 
-        comingRoom.setText("123");
+        PhoneN.setText("123");
 
         jButton5.setText("Refresh");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -180,9 +180,9 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                             .addComponent(jSeparator3)
                             .addComponent(jSeparator2)
-                            .addComponent(comingPatient)
-                            .addComponent(comingDate)
-                            .addComponent(comingRoom))))
+                            .addComponent(Day)
+                            .addComponent(Month)
+                            .addComponent(PhoneN))))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -198,7 +198,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(comingPatient))
+                            .addComponent(Day))
                         .addGap(26, 26, 26))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,14 +207,14 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(comingDate))
+                            .addComponent(Month))
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(comingRoom))
+                    .addComponent(PhoneN))
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -244,7 +244,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jLabel7.setText("Patient");
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("Patient visit");
+        jButton3.setText("Patient Status");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -321,9 +321,9 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -452,6 +452,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         List<String[]> rowList = new ArrayList<>();
+        LoginStartupUI login = new LoginStartupUI();
         try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\Appointments.csv"))) {
             String line = "";
             while ((line = br.readLine()) != null) {
@@ -491,6 +492,12 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 if(matrix[i][7].equals("October"))matrix[i][7] = "10";
                 if(matrix[i][7].equals("Novemeber"))matrix[i][7] = "11";
                 if(matrix[i][7].equals("December"))matrix[i][7] = "12";
+                
+                pw.print(login.Username.getText());
+                if(matrix[i][5].equals("3") && !login.Username.getText().trim().equals("mirkamandari@doctor.com"))matrix[i][0] = "999999";
+                if(matrix[i][5].equals("1") && !login.Username.getText().trim().equals("bui@doctor.com"))matrix[i][0] = "99999999";
+                if(matrix[i][5].equals("4") && !login.Username.getText().trim().equals("kariyawasam@doctor.com"))matrix[i][0] = "99999";
+                if(matrix[i][5].equals("2") && !login.Username.getText().trim().equals("lewitsky@doctor.com"))matrix[i][0] = "9999999";
             }
             
             pw.flush();
@@ -502,32 +509,47 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         }
 
-        double[][] intMatrix  = new double[matrix.length][4];
+        int[][] intMatrix  = new int[matrix.length][5];
         for(int i = 1; i < matrix.length; i++)
         {
-            intMatrix[i][0] = Double.parseDouble(matrix[i][0]);
-            intMatrix[i][1] = Double.parseDouble(matrix[i][3]);
-            intMatrix[i][2] = Double.parseDouble(matrix[i][6]);
-            intMatrix[i][3] = Double.parseDouble(matrix[i][7]);
+            intMatrix[i][0] = Integer.valueOf(matrix[i][0]);
+            intMatrix[i][1] = Integer.valueOf(matrix[i][3]);
+            intMatrix[i][2] = Integer.valueOf(matrix[i][6]);
+            intMatrix[i][3] = Integer.valueOf(matrix[i][7]);
+            intMatrix[i][4] = Integer.valueOf(matrix[i][5]);
         }
         
-        java.util.Arrays.sort(intMatrix, (double[] a, double[] b) -> Double.compare(a[0], b[0]));
+        java.util.Arrays.sort(intMatrix, (int[] a, int[] b) -> Integer.compare(a[0], b[0]));
         
+        
+        
+        String d = String.valueOf(intMatrix[1][2]);
+        String m = String.valueOf(intMatrix[1][3]);
+        String p = String.valueOf(intMatrix[1][1]);
+        
+        Day.setText(d);
+        Month.setText(m);
+        PhoneN.setText(p);
+
         try
         {
-            FileWriter fw = new FileWriter(filepath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
+            File file = new File("src\\hospitalmanager\\UpcomingAppointment.csv");
+            FileWriter fw = new FileWriter(file);
+            PrintWriter pw = new PrintWriter(fw);
 
-            for(int i = 0; i < intMatrix.length; i++)
+            for(int i = 1; i < intMatrix.length; i++)
             {
-                pw.append(intMatrix[i][0]+","+intMatrix[i][1]+","+intMatrix[i][2]+","+intMatrix[i][3]+"\n");
+                pw.append(intMatrix[i][0]+","+intMatrix[i][1]+","+intMatrix[i][2]+","+intMatrix[i][3]+","+intMatrix[i][4]+"\n");
             }
+            pw.close();
+            pw.flush();
         }
         catch(Exception e)
         {
             
         }
+        
+        
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -568,10 +590,10 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Announcement;
+    private javax.swing.JLabel Day;
     public javax.swing.JLabel DrStartup;
-    private javax.swing.JLabel comingDate;
-    private javax.swing.JLabel comingPatient;
-    private javax.swing.JLabel comingRoom;
+    private javax.swing.JLabel Month;
+    private javax.swing.JLabel PhoneN;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
