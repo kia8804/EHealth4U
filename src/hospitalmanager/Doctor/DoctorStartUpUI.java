@@ -28,6 +28,21 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     public DoctorStartUpUI() {
         initComponents();
 
+        switch (LoginStartupUI.doc) {
+            case 0:
+                DrStartup.setText("Dr. Mirkamandari (Kiarash)");
+                break;
+            case 1:
+                DrStartup.setText("Dr. Bui (Duy)");
+                break;
+            case 2:
+                DrStartup.setText("Dr. Lewitsky (Jay)");
+                break;
+            default:
+                DrStartup.setText("Dr. Kariyawasam (Disen)");
+                break;
+        }
+        
     }
 
     /**
@@ -45,7 +60,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Announcement = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -87,22 +102,24 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_megaphone_32px.png"))); // NOI18N
         jLabel5.setText("jLabel5");
 
-        Announcement.setText("Announcement");
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("There are currently no announcements available");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(Announcement))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -112,9 +129,9 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Announcement)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
@@ -144,11 +161,14 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
 
-        Day.setText("Name");
+        Day.setForeground(new java.awt.Color(204, 204, 204));
+        Day.setText("D");
 
-        Month.setText("Date");
+        Month.setForeground(new java.awt.Color(204, 204, 204));
+        Month.setText("M");
 
-        PhoneN.setText("123");
+        PhoneN.setForeground(new java.awt.Color(204, 204, 204));
+        PhoneN.setText("XXX-XXX-XXXX");
 
         jButton5.setText("Refresh");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -367,7 +387,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String email = (String)JOptionPane.showInputDialog(this, "Enter Patient Email Address", JOptionPane.PLAIN_MESSAGE);
+        email = (String)JOptionPane.showInputDialog(this, "Enter Patient Email Address");
         String filepath = "src\\hospitalmanager\\UserDatabase.csv";
         String line = "";
         boolean found = false;
@@ -382,14 +402,17 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 String[] user = line.split(",");
                 if(user[0].contains("@guest.com") && user[5].equals(email))
                 {
-                    JOptionPane.showMessageDialog(null, user[10]);
+                    PatientSearch nextPage = new PatientSearch();
+                    nextPage.show();
+                    
                     found = true;
                 }
             }
-            if(!found)
+            if(!found && !email.equals(""))
             {
                 JOptionPane.showMessageDialog(null, "Patient Does Not Exist");
             }
+
         }
         catch(Exception e)
         {
@@ -439,7 +462,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                     }
                 }
             }
-            if(!found)
+            if(!found && !patientPhoneNum.equals(""))
             {
                 JOptionPane.showMessageDialog(null, "Patient Not Found");
             }
@@ -493,11 +516,6 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 if(matrix[i][7].equals("Novemeber"))matrix[i][7] = "11";
                 if(matrix[i][7].equals("December"))matrix[i][7] = "12";
                 
-                pw.print(login.Username.getText());
-                if(matrix[i][5].equals("3") && !login.Username.getText().trim().equals("mirkamandari@doctor.com"))matrix[i][0] = "999999";
-                if(matrix[i][5].equals("1") && !login.Username.getText().trim().equals("bui@doctor.com"))matrix[i][0] = "99999999";
-                if(matrix[i][5].equals("4") && !login.Username.getText().trim().equals("kariyawasam@doctor.com"))matrix[i][0] = "99999";
-                if(matrix[i][5].equals("2") && !login.Username.getText().trim().equals("lewitsky@doctor.com"))matrix[i][0] = "9999999";
             }
             
             pw.flush();
@@ -509,14 +527,14 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         }
 
-        int[][] intMatrix  = new int[matrix.length][5];
+        int[][] intMatrix  = new int[matrix.length][4];
         for(int i = 1; i < matrix.length; i++)
         {
             intMatrix[i][0] = Integer.valueOf(matrix[i][0]);
             intMatrix[i][1] = Integer.valueOf(matrix[i][3]);
             intMatrix[i][2] = Integer.valueOf(matrix[i][6]);
             intMatrix[i][3] = Integer.valueOf(matrix[i][7]);
-            intMatrix[i][4] = Integer.valueOf(matrix[i][5]);
+            //intMatrix[i][4] = Integer.valueOf(matrix[i][5]);
         }
         
         java.util.Arrays.sort(intMatrix, (int[] a, int[] b) -> Integer.compare(a[0], b[0]));
@@ -525,6 +543,19 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         
         String d = String.valueOf(intMatrix[1][2]);
         String m = String.valueOf(intMatrix[1][3]);
+        if(m.equals("1"))m="January";
+        if(m.equals("2"))m="February";
+        if(m.equals("3"))m="March";
+        if(m.equals("3"))m="April";
+        if(m.equals("3"))m="May";
+        if(m.equals("3"))m="June";
+        if(m.equals("3"))m="July";
+        if(m.equals("3"))m="August";
+        if(m.equals("3"))m="September";
+        if(m.equals("3"))m="October";
+        if(m.equals("3"))m="November";
+        if(m.equals("3"))m="December";
+
         String p = String.valueOf(intMatrix[1][1]);
         
         Day.setText(d);
@@ -587,9 +618,9 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public static String email;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Announcement;
     private javax.swing.JLabel Day;
     public javax.swing.JLabel DrStartup;
     private javax.swing.JLabel Month;
@@ -599,6 +630,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

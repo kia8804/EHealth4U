@@ -6,7 +6,9 @@ package hospitalmanager.Doctor;
 
 import hospitalmanager.Patient.*;
 import hospitalmanager.FrontDesk.*;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
@@ -22,6 +24,32 @@ public class PatientSearch extends javax.swing.JFrame {
      */
     public PatientSearch(){
         initComponents();
+        
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\UserDatabase.csv")))
+        {
+            String line = "";
+            while((line = br.readLine()) != null)
+            {
+                String[] user = line.split(",");
+                if(user[5].trim().equals(DoctorStartUpUI.email.trim()) && user[0].contains("@guest.com"))
+                {
+                    FirstName.setText(user[2]);
+                    LastName.setText(user[3]);
+                    DOB.setText(user[6]);
+                    Gender.setText(user[8]);
+                    PhoneNumber.setText(user[4]);
+                    HomeAddress.setText(user[7]);
+                    Email.setText(user[5]);
+                    return;
+                }
+            }
+            br.close();
+        }
+        catch(Exception e)
+        {
+            
+        }
+        
     }
 
     /**
