@@ -98,7 +98,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         jLabel6.setText("Announcement");
 
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel3.setText("There is no announcements available");
+        jLabel3.setText("There are currently no announcements available");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

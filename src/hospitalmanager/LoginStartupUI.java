@@ -269,6 +269,10 @@ public class LoginStartupUI extends javax.swing.JFrame {
             if(found && username.contains("@doctor.com"))
             {
                 JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                if(Username.getText().equals("mirkamandari@doctor.com")) doc = 0;
+                if(Username.getText().equals("bui@doctor.com")) doc=1;
+                if(Username.getText().equals("lewitsky@doctor.com")) doc=2;
+                if(Username.getText().equals("Kariyawasam")) doc=3;
                 DoctorStartUpUI nextPage = new DoctorStartUpUI();
                 nextPage.show();
 
@@ -434,68 +438,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private void PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
         {
-            /*String username = Username.getText();
-            String password = Password.getText();
-            boolean found = false;
-
-            try
-            {
-                File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
-                Scanner scan = new Scanner(filex);
-                scan.useDelimiter("[,\n]");
-
-                while(scan.hasNext() && !found)
-                {
-                    String usernamex = scan.next();
-                    String passwordx = scan.next();
-                    for(int i = 0; i < 12; i++)scan.next();
-
-                    if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
-                    {
-                        found = true;
-                    }
-                }
-                if(found && username.contains("@guest.com"))
-                {
-                    JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
-                    PatientStartupUI nextPage = new PatientStartupUI();
-                    nextPage.show();
-
-                    dispose();
-                }
-
-                if(found && username.contains("@doctor.com"))
-                {
-                    JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
-                    DoctorStartUpUI nextPage = new DoctorStartUpUI();
-                    nextPage.show();
-
-                    dispose();
-                }
-
-                if(found && username.contains("@front.com"))
-                {
-                    JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
-                    FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
-                    nextPage.show();
-
-                    dispose();
-                }
-
-                if(!found)
-                {
-                    JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
-                    Username.setText("Username");
-                    Password.setText("Password");
-                }
-
-            }
-
-            catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(null, "An error occured! "+e);
-            }
-        */
             String username = Username.getText();
             String password = Password.getText();
             boolean found = false;
@@ -544,6 +486,11 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 if(found && username.contains("@doctor.com"))
                 {
                     JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                    if(Username.getText().equals("mirkamandari@doctor.com")) doc = 0;
+                    if(Username.getText().equals("bui@doctor.com")) doc=1;
+                    if(Username.getText().equals("lewitsky@doctor.com")) doc=2;
+                    if(Username.getText().equals("Kariyawasam")) doc=3;
+
                     DoctorStartUpUI nextPage = new DoctorStartUpUI();
                     nextPage.show();
 
@@ -578,67 +525,6 @@ public class LoginStartupUI extends javax.swing.JFrame {
     private void UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
         {
-            /*String username = Username.getText();
-            String password = Password.getText();
-            boolean found = false;
-
-            try
-            {
-                File filex = new File("src\\hospitalmanager\\UserDatabase.csv");
-                Scanner scan = new Scanner(filex);
-                scan.useDelimiter("[,\n]");
-
-                while(scan.hasNext() && !found)
-                {
-                    String usernamex = scan.next();
-                    String passwordx = scan.next();
-                    for(int i = 0; i < 12; i++)scan.next();
-
-                    if(usernamex.trim().equals(username.trim()) && passwordx.trim().equals(password.trim()))
-                    {
-                        found = true;
-                    }
-                }
-                if(found && username.contains("@guest.com"))
-                {
-                    JOptionPane.showMessageDialog(null, "Logging Into Guest Account...");
-                    PatientStartupUI nextPage = new PatientStartupUI();
-                    nextPage.show();
-
-                    dispose();
-                }
-
-                if(found && username.contains("@doctor.com"))
-                {
-                    JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
-                    DoctorStartUpUI nextPage = new DoctorStartUpUI();
-                    nextPage.show();
-
-                    dispose();
-                }
-
-                if(found && username.contains("@front.com"))
-                {
-                    JOptionPane.showMessageDialog(null, "Logging Into Front Desk Account...");
-                    FrontDeskStartUpUI nextPage = new FrontDeskStartUpUI();
-                    nextPage.show();
-
-                    dispose();
-                }
-
-                if(!found)
-                {
-                    JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
-                    Username.setText("Username");
-                    Password.setText("Password");
-                }
-
-            }
-
-            catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(null, "An error occured! "+e);
-            }*/
             String username = Username.getText();
             String password = Password.getText();
             boolean found = false;
@@ -687,6 +573,11 @@ public class LoginStartupUI extends javax.swing.JFrame {
                 if(found && username.contains("@doctor.com"))
                 {
                     JOptionPane.showMessageDialog(null, "Logging Into Doctor/Nurse Account...");
+                    if(Username.getText().equals("mirkamandari@doctor.com")) doc = 0;
+                    if(Username.getText().equals("bui@doctor.com")) doc=1;
+                    if(Username.getText().equals("lewitsky@doctor.com")) doc=2;
+                    if(Username.getText().equals("Kariyawasam")) doc=3;
+
                     DoctorStartUpUI nextPage = new DoctorStartUpUI();
                     nextPage.show();
 
@@ -796,7 +687,7 @@ public class LoginStartupUI extends javax.swing.JFrame {
     }
     
     public static String[][] matrix;
-    
+    public static int doc;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Password;
     public javax.swing.JTextField Username;
