@@ -69,6 +69,7 @@ public class InformationUpdate extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 53, 55));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jLayeredPane1.setBackground(new java.awt.Color(49, 51, 51));
 

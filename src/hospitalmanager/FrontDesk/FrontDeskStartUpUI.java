@@ -90,6 +90,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(36, 38, 39));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 204));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -123,6 +124,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel6.setBackground(new java.awt.Color(36, 38, 39));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         AddDoctor.setBackground(new java.awt.Color(19, 19, 21));
         AddDoctor.setForeground(new java.awt.Color(204, 204, 204));
@@ -187,6 +189,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel5.setBackground(new java.awt.Color(36, 38, 39));
+        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
 
         AddPatient.setBackground(new java.awt.Color(19, 19, 21));
         AddPatient.setForeground(new java.awt.Color(204, 204, 204));
@@ -253,6 +256,7 @@ public class FrontDeskStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(36, 38, 39));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         jButton7.setBackground(new java.awt.Color(19, 19, 21));
         jButton7.setForeground(new java.awt.Color(204, 204, 204));

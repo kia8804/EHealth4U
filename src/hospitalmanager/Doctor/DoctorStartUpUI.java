@@ -95,6 +95,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(51, 53, 55));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
 
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Announcement");
@@ -135,6 +136,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         jPanel2.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -241,6 +243,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         jPanel4.setForeground(new java.awt.Color(51, 51, 51));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -298,10 +301,11 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         );
 
         jPanel5.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         DrStartup.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         DrStartup.setForeground(new java.awt.Color(204, 204, 204));
-        DrStartup.setText("Dr.  ");
+        DrStartup.setText("Dr. <Last Name> (First Name)");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hospitalmanager/Icons/icons8_user_50px_1.png"))); // NOI18N
         jLabel4.setText("jLabel4");
