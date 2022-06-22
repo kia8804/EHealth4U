@@ -1,6 +1,6 @@
 Username,Password,First Name,Last Name,Phone Number,Email Address,Date of Birth,Home Address,Gender,Availability,Status,Security Question 1,Security Question 2,Security Question 3
 jtim@guest.com,1234,Jim,Tim,519-987-9876,jimthedudu@gmail.com,1/1/1900,Canada,Male,na,na,donuts,Blue,Basketball
-hmaguire@guest.com,1234,Harry,Maguire,519-987-6543,harrym@gmail.com,1/1/1900,Canada,Male,na,na,english breakfast,tea,Red,Soccer
+hmaguire@guest.com,1234,Harry,Maguire,519-987-6543,harrym@gmail.com,1/1/1900,Canada,Male,na,na,english breakfast,Red,Soccer
 mirkamandari@doctor.com,1234,Kiarash,Mirkamandari,519-123-1234,mirkia@gmail.com,01/01/1900,Canada,Male,Available,na,chicken,Yellow,Soccer
 bui@doctor.com,1234,Duy,Bui,519-831-4567,duybui@gmail.com,1/1/1900,Canada,Male,Available,na,coffee,Blue,Tennis
 kariyawasam@doctor.com,1234,Disen,Kariyawasam,344-323-4212,disenkari@gmail.com,1/1/1900,Canada,Male,Available,na,coffee,Orange,Volleyball
