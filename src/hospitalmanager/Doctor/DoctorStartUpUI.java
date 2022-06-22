@@ -6,8 +6,13 @@ package hospitalmanager.Doctor;
 
 import hospitalmanager.LoginStartupUI;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -22,7 +27,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
      */
     public DoctorStartUpUI() {
         initComponents();
-        //DrStartup.setText("");
+
     }
 
     /**
@@ -53,6 +58,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         comingPatient = new javax.swing.JLabel();
         comingDate = new javax.swing.JLabel();
         comingRoom = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -122,15 +128,15 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("Patient:");
+        jLabel8.setText("Day:");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Date:");
+        jLabel9.setText("Month:");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Room:");
+        jLabel10.setText("Phone Number:");
 
         jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -144,6 +150,13 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
 
         comingRoom.setText("123");
 
+        jButton5.setText("Refresh");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -153,7 +166,9 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +191,8 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -434,6 +450,87 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        List<String[]> rowList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\hospitalmanager\\Appointments.csv"))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                String[] lineItems = line.split(",");
+                rowList.add(lineItems);
+            }
+            br.close();
+        }
+        catch(Exception e){
+            // Handle any I/O problems
+        }
+        String[][] matrix = new String[rowList.size()][];
+        for (int i = 0; i < rowList.size(); i++) {
+            String[] row = rowList.get(i);
+            matrix[i] = row;
+        }
+        
+        String filepath = "src\\hospitalmanager\\UpcomingAppointment.csv";
+        
+        try
+            {
+            FileWriter fw = new FileWriter(filepath, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            for(int i = 1; i < matrix.length; i++)
+            {
+                if(matrix[i][7].equals("January"))matrix[i][7] = "1";
+                if(matrix[i][7].equals("February"))matrix[i][7] = "2";
+                if(matrix[i][7].equals("March"))matrix[i][7] = "3";
+                if(matrix[i][7].equals("April"))matrix[i][7] = "4";
+                if(matrix[i][7].equals("May"))matrix[i][7] = "5";
+                if(matrix[i][7].equals("June"))matrix[i][7] = "6";
+                if(matrix[i][7].equals("July"))matrix[i][7] = "7";
+                if(matrix[i][7].equals("August"))matrix[i][7] = "8";
+                if(matrix[i][7].equals("Septmber"))matrix[i][7] = "9";
+                if(matrix[i][7].equals("October"))matrix[i][7] = "10";
+                if(matrix[i][7].equals("Novemeber"))matrix[i][7] = "11";
+                if(matrix[i][7].equals("December"))matrix[i][7] = "12";
+            }
+            
+            pw.flush();
+            pw.close();
+
+        }
+        catch(Exception e)
+        {
+
+        }
+
+        double[][] intMatrix  = new double[matrix.length][4];
+        for(int i = 1; i < matrix.length; i++)
+        {
+            intMatrix[i][0] = Double.parseDouble(matrix[i][0]);
+            intMatrix[i][1] = Double.parseDouble(matrix[i][3]);
+            intMatrix[i][2] = Double.parseDouble(matrix[i][6]);
+            intMatrix[i][3] = Double.parseDouble(matrix[i][7]);
+        }
+        
+        java.util.Arrays.sort(intMatrix, (double[] a, double[] b) -> Double.compare(a[0], b[0]));
+        
+        try
+        {
+            FileWriter fw = new FileWriter(filepath, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+
+            for(int i = 0; i < intMatrix.length; i++)
+            {
+                pw.append(intMatrix[i][0]+","+intMatrix[i][1]+","+intMatrix[i][2]+","+intMatrix[i][3]+"\n");
+            }
+        }
+        catch(Exception e)
+        {
+            
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -479,6 +576,7 @@ public class DoctorStartUpUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
