@@ -12,7 +12,7 @@ and professionals in addition to improving security and privacy.
 
 ## Features
 
-- Multiple Isolated Databases
+- Multiple isolated databases
 - Secure account login
 - Three different users (patient, doctor, front desk)
 - Abilitiy to create new patient/guest accounts
