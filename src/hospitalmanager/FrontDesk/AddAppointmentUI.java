@@ -54,6 +54,7 @@ public class AddAppointmentUI extends javax.swing.JFrame {
         PhoneNumber = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(47, 47, 49));
 

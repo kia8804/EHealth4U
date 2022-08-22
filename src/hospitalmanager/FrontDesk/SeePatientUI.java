@@ -34,7 +34,7 @@ public class SeePatientUI extends javax.swing.JFrame {
                 DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
                 if(user[0].contains("@guest.com"))
                 {
-                    user = new String[]{user[2],user[3],user[4],user[5],user[6],user[7],user[8]};
+                    user = new String[]{user[2],user[3],user[5],user[6],user[7],user[8],user[9]};
                     tblModel.addRow(user);
                 }
             }
