@@ -18,7 +18,6 @@ and professionals in addition to improving security and privacy.
 - Abilitiy to create new patient/guest accounts
 ## Demo
 
-Loging in with the different account types
 
 https://user-images.githubusercontent.com/30180556/185841520-3bb15f11-593e-44fd-bb1c-ec959da16bd4.mp4
 
